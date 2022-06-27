@@ -12,5 +12,6 @@ public:
 	void draw();
 private:
 	int x, y;	//・プレイヤーの描画座標
+	bool turn;	//・左右反転描画フラグ（右方向を正とする）
 	std::shared_ptr<AnimationManager> animationManagerPtr;
 };

@@ -12,8 +12,10 @@ void AnimationManager::add(std::shared_ptr<Animation> animPtr) {
 
 //・再生するアニメーションを変更する（現在再生中のアニメーションは初期化される）
 void AnimationManager::change(int idx) {
-	animations[currentIdx]->reset();
-	currentIdx = idx;
+	if (currentIdx != idx) {
+		animations[currentIdx]->reset();
+		currentIdx = idx;
+	}
 }
 
 void AnimationManager::update() {
@@ -24,6 +26,10 @@ void AnimationManager::update() {
 	}
 }
 
-void AnimationManager::draw(int x, int y) {
-	DrawGraph(x, y, animations[currentIdx]->getGraphHandle(), TRUE);
+void AnimationManager::draw(int x, int y, bool turn) {
+	if (turn) {
+		DrawTurnGraph(x, y, animations[currentIdx]->getGraphHandle(), TRUE);
+	} else {
+		DrawGraph(x, y, animations[currentIdx]->getGraphHandle(), TRUE);
+	}
 }

@@ -151,6 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AnimationManager.cpp" />
     <ClCompile Include="BaseActor.cpp" />
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="GameManager.cpp" />
@@ -158,6 +160,8 @@
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="AnimationManager.h" />
     <ClInclude Include="BaseActor.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="GameManager.h" />

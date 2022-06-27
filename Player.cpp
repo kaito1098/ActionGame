@@ -1,42 +1,22 @@
 #include "Player.h"
-#include "DxLib.h"
 
-const int ANIM_FRAME = 6;	//・アニメーション１コマのフレーム数
-const int ANIM_ID_IDLE = 0;
-const TCHAR* GRAPH_PATH_IDLE = "Data/Actor/Hero/Idle.png";
-const int FRAME_COUNT_IDLE = 11;
-
+/**
+ * @brief プレイヤーキャラクタークラスのコンストラクタ
+ * @param _x：初期位置（x座標）
+ * @param _y：初期位置（y座標）
+ */
 Player::Player(int _x, int _y) :
-	x(_x), y(_y), frameCnt(0), animFrameCnt(0)
+	x(_x), y(_y)
 {
-	//・スプライトハンドル格納用のメモリ確保
-	graphIdle = new int[FRAME_COUNT_IDLE];
-	//・画像ファイルのロード
-	LoadDivGraph(GRAPH_PATH_IDLE, FRAME_COUNT_IDLE, 11, 1, 140, 140, graphIdle);
-	graph = graphIdle[0];
-	animId = ANIM_ID_IDLE;
-}
-
-Player::~Player() {
-	//スプライトハンドル格納用メモリ解放
-	delete[] graphIdle;
+	//・使用するアニメーション一式の準備（一番目に指定したアニメーションがデフォルトアニメーションとなる）
+	animationManagerPtr = std::make_shared<AnimationManager>();
+	animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Hero/Idle.png", 11, 11, 1, 140, 140, 6, true));	//・０
 }
 
 void Player::update() {
-	frameCnt++;
-	//TODO：アニメーション前にキー入力によるanimID更新？であれば関数分けたい
-	switch (animId) {
-	case ANIM_ID_IDLE:
-		if (frameCnt % ANIM_FRAME == 0) {
-			animFrameCnt = (animFrameCnt + 1) % FRAME_COUNT_IDLE;
-			graph = graphIdle[animFrameCnt];
-		}
-		break;
-	default:
-		break;
-	}
+	animationManagerPtr->update();
 }
 
 void Player::draw() {
-	DrawGraph(x - 70, y - 70, graph, TRUE);
+	animationManagerPtr->draw(x - 70, y - 70);
 }

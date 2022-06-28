@@ -33,3 +33,11 @@ void AnimationManager::draw(int x, int y, bool turn) {
 		DrawGraph(x, y, animations[currentIdx]->getGraphHandle(), TRUE);
 	}
 }
+
+bool AnimationManager::isIdle() {
+	return currentIdx == 0;
+}
+
+bool AnimationManager::isBusy() {
+	return animations[currentIdx]->isBusy();
+}

@@ -11,7 +11,9 @@ public:
 	void update();
 	void draw();
 private:
-	int x, y;	//・プレイヤーの描画座標
-	bool turn;	//・左右反転描画フラグ（右方向を正とする）
+	int x, y, speed;			//・プレイヤーの描画座標、移動速度
+	int xSpeed, ySpeed;			//・X軸方向速度、Y軸方向速度、落下時のX軸方向保存速度
+	bool turn;					//・左右反転描画フラグ（右方向を正とする）
 	std::shared_ptr<AnimationManager> animationManagerPtr;
+	bool checkFalling();
 };

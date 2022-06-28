@@ -10,6 +10,8 @@ public:
 	void change(int idx);
 	void update();
 	void draw(int x, int y, bool turn);
+	bool isIdle();
+	bool isBusy();
 private:
 	std::vector<std::shared_ptr<Animation>> animations;
 	int currentIdx;

@@ -9,4 +9,5 @@ namespace KeyInput {
 	KeyInputUtility LEFT(KEY_INPUT_LEFT);
 	KeyInputUtility Z(KEY_INPUT_Z);
 	KeyInputUtility X(KEY_INPUT_X);
+	KeyInputUtility LSHIFT(KEY_INPUT_LSHIFT);
 }

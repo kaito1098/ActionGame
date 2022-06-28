@@ -17,12 +17,10 @@ void AnimationManager::change(int idx) {
 		currentIdx = idx;
 	}
 }
-
 void AnimationManager::update() {
 	if (animations[currentIdx]->update()) {
 		//・アニメーションが終了したらデフォルトアニメーションに遷移
-		animations[currentIdx]->reset();
-		currentIdx = 0;
+		change(0);
 	}
 }
 
@@ -38,6 +36,6 @@ bool AnimationManager::isIdle() {
 	return currentIdx == 0;
 }
 
-bool AnimationManager::isBusy() {
-	return animations[currentIdx]->isBusy();
+int AnimationManager::getBusyLevel() {
+	return animations[currentIdx]->getBusyLevel();
 }

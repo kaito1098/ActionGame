@@ -4,8 +4,11 @@
 std::unique_ptr<GameManager> gameManagerPtr = std::make_unique<GameManager>();
 
 //・画面解像度
-const int SCREEN_WIDTH = 854;
-const int SCREEN_HEIGHT = 480;
+const int SCREEN_WIDTH = 700;
+const int SCREEN_HEIGHT = 406;
 
 //・物理量の定義
 const int MAX_FALL_SPEED = 8;
+
+//・地面の高さ（TODO：テスト用なのであとで消す）
+const int GROUND_HEIGHT = SCREEN_HEIGHT + 36;

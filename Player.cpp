@@ -27,38 +27,36 @@ void Player::setup() {
 		//・落下速度計算
 		if (ySpeed < MAX_FALL_SPEED) ySpeed++;
 		//・着地
-		if (y + ySpeed >= SCREEN_HEIGHT / 2) {
-			y = SCREEN_HEIGHT / 2;
+		if (y + ySpeed >= GROUND_HEIGHT) {
+			y = GROUND_HEIGHT;
 			ySpeed = 0;
 			xSpeed = 0;
 		}
 	} else {
 		//・落下中でない場合、ビジーレベル０の各操作
-		if (animationManagerPtr->getBusyLevel() <= 0) {
 			//・左右移動
-			if (KeyInput::RIGHT.onPressed()) {
-				if (animationManagerPtr->change(1)) {
-					turn = false;
-					xSpeed = speed;
-				}
+		if (KeyInput::RIGHT.onPressed()) {
+			if (animationManagerPtr->change(1)) {
+				turn = false;
+				xSpeed = speed;
 			}
-			if (KeyInput::LEFT.onPressed()) {
-				if (animationManagerPtr->change(1)) {
-					turn = true;
-					xSpeed = -speed;
-				}
+		}
+		if (KeyInput::LEFT.onPressed()) {
+			if (animationManagerPtr->change(1)) {
+				turn = true;
+				xSpeed = -speed;
 			}
-			//・ジャンプ
-			if (KeyInput::Z.onPressedOnce()) {
-				if (animationManagerPtr->change(2)) {
-					ySpeed = -12;
-				}
+		}
+		//・ジャンプ
+		if (KeyInput::Z.onPressedOnce()) {
+			if (animationManagerPtr->change(2)) {
+				ySpeed = -12;
 			}
-			//・アイドル状態
-			if (!KeyInput::RIGHT.onPressed() && !KeyInput::LEFT.onPressed()) {
-				if (animationManagerPtr->change(0)) {
-					xSpeed = 0;
-				}
+		}
+		//・アイドル状態
+		if (!KeyInput::RIGHT.onPressed() && !KeyInput::LEFT.onPressed()) {
+			if (animationManagerPtr->change(0)) {
+				xSpeed = 0;
 			}
 		}
 		//・バックステップ

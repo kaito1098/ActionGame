@@ -20,11 +20,11 @@ void BaseActor::update() {
 
 //・描画
 void BaseActor::draw() {
-	animationManagerPtr->draw(x - xSize / 2, y - ySize / 2, turn);
+	animationManagerPtr->draw(x - xSize / 2, y - ySize, turn);
 }
 
 //・空中にいるかどうか？
 bool BaseActor::checkFalling() {
 	//TODO：実際にはどう判定すべきか？
-	return y < (SCREEN_HEIGHT / 2);
+	return y < (GROUND_HEIGHT);
 }

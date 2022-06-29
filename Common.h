@@ -9,3 +9,5 @@ extern const int SCREEN_WIDTH;
 extern const int SCREEN_HEIGHT;
 
 extern const int MAX_FALL_SPEED;
+
+extern const int GROUND_HEIGHT;

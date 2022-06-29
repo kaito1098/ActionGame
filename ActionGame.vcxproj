@@ -155,6 +155,7 @@
     <ClCompile Include="AnimationManager.cpp" />
     <ClCompile Include="BaseActor.cpp" />
     <ClCompile Include="Common.cpp" />
+    <ClCompile Include="EnemyMushroom.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="KeyInputUtility.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="AnimationManager.h" />
     <ClInclude Include="BaseActor.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="EnemyMushroom.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="KeyInput.h" />
     <ClInclude Include="KeyInputUtility.h" />

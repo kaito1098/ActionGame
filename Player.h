@@ -1,8 +1,5 @@
 #pragma once
 #include "BaseActor.h"
-#include "AnimationManager.h"
-#include <vector>
-#include <memory>
 
 class Player : public BaseActor {
 public:

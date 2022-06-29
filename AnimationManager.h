@@ -7,7 +7,7 @@ class AnimationManager {
 public:
 	AnimationManager();
 	void add(std::shared_ptr<Animation> animPtr);
-	void change(int idx);
+	bool change(int idx, bool force = false);
 	void update();
 	void draw(int x, int y, bool turn);
 	bool isIdle();

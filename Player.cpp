@@ -2,8 +2,8 @@
 #include "Common.h"
 #include "KeyInput.h"
 
-const int SPRITES_X_SIZE = 140;
-const int SPRITES_Y_SIZE = 140;
+const int SPRITES_X_SIZE = 420;
+const int SPRITES_Y_SIZE = 420;
 
 /**
  * @brief プレイヤーキャラクタークラスのコンストラクタ

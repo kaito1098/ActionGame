@@ -1,8 +1,8 @@
 #include "EnemyMushroom.h"
 #include "Common.h"
 
-const int SPRITES_X_SIZE = 150;
-const int SPRITES_Y_SIZE = 150;
+const int SPRITES_X_SIZE = 450;
+const int SPRITES_Y_SIZE = 450;
 
 //・自律移動（TODO：テスト用なのであとで消す）
 int frameCnt = 0;

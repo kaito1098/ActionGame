@@ -8,7 +8,6 @@ int backGraph = 0;
 void GameManager::main() {
 	init();
 	SetDrawScreen(DX_SCREEN_BACK);
-	SetWindowSizeExtendRate(2.0);
 
 	while (!ScreenFlip() && !ProcessMessage() && !ClearDrawScreen()) {
 		update();

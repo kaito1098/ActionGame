@@ -21,6 +21,11 @@ Player::Player(int _x, int _y) :
 	animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Hero/Dash.png", 4, 4, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 4, false, 2));	//・４
 }
 
+//・衝突発生時
+void Player::hit() {
+	OutputDebugString("Player : hit!");
+}
+
 //・キー入力による操作、アニメーション遷移と移動量のセットなど
 void Player::setup() {
 	if (checkFalling()) {

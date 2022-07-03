@@ -1,5 +1,6 @@
 #include "EnemyMushroom.h"
 #include "Common.h"
+#include "DxLib.h"
 
 const int SPRITES_X_SIZE = 450;
 const int SPRITES_Y_SIZE = 450;
@@ -21,6 +22,11 @@ EnemyMushroom::EnemyMushroom(int _x, int _y) :
 	animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Mushroom/Run.png", 8, 8, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 4, true));			//・１
 	animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Mushroom/TakeHit.png", 4, 4, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 6, false));	//・２
 	animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Mushroom/Attack2.png", 8, 8, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 6, false, 1));	//・３
+}
+
+//・衝突発生時
+void EnemyMushroom::hit() {
+	OutputDebugString("EnemyMushroom : hit!");
 }
 
 //・キー入力による操作、アニメーション遷移と移動量のセットなど

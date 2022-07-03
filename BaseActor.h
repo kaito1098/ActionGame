@@ -8,6 +8,7 @@ public:
 	BaseActor(int x, int y, int speed, int xSize, int ySize);
 	void update();
 	void draw();
+	virtual void hit() = 0;
 protected:
 	int x, y, speed;	//・プレイヤーの描画座標、移動速度
 	int xSpeed, ySpeed;	//・X軸方向速度、Y軸方向速度、落下時のX軸方向保存速度

@@ -5,15 +5,10 @@
 const int SPRITES_X_SIZE = 420;
 const int SPRITES_Y_SIZE = 420;
 
-/**
- * @brief プレイヤーキャラクタークラスのコンストラクタ
- * @param _x：初期位置（x座標）
- * @param _y：初期位置（y座標）
- */
 Player::Player(int _x, int _y) :
 	BaseActor(_x, _y, 2, SPRITES_X_SIZE, SPRITES_Y_SIZE) {
 	//・使用するアニメーション一式の準備（一番目に指定したアニメーションが待機アニメーションとなる）
-	animationManagerPtr = std::make_shared<AnimationManager>();
+	animationManagerPtr = std::make_unique<AnimationManager>();
 	animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Hero/Idle.png", 11, 11, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 6, true));		//・０
 	animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Hero/Run.png", 8, 8, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 4, true));			//・１
 	animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Hero/Jump.png", 4, 4, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 8, false));		//・２
@@ -21,7 +16,6 @@ Player::Player(int _x, int _y) :
 	animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Hero/Dash.png", 4, 4, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 4, false, 2));	//・４
 }
 
-//・キー入力による操作、アニメーション遷移と移動量のセットなど
 void Player::setup() {
 	if (checkFalling()) {
 		//・落下速度計算
@@ -33,8 +27,13 @@ void Player::setup() {
 			xSpeed = 0;
 		}
 	} else {
-		//・落下中でない場合、ビジーレベル０の各操作
-			//・左右移動
+		//・アイドル状態
+		if (!KeyInput::RIGHT.onPressed() && !KeyInput::LEFT.onPressed()) {
+			if (animationManagerPtr->change(0)) {
+				xSpeed = 0;
+			}
+		}
+		//・左右移動
 		if (KeyInput::RIGHT.onPressed()) {
 			if (animationManagerPtr->change(1)) {
 				turn = false;
@@ -51,12 +50,6 @@ void Player::setup() {
 		if (KeyInput::Z.onPressedOnce()) {
 			if (animationManagerPtr->change(2)) {
 				ySpeed = -12;
-			}
-		}
-		//・アイドル状態
-		if (!KeyInput::RIGHT.onPressed() && !KeyInput::LEFT.onPressed()) {
-			if (animationManagerPtr->change(0)) {
-				xSpeed = 0;
 			}
 		}
 		//・バックステップ

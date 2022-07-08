@@ -1,0 +1,45 @@
+\hypertarget{_animation_8h_source}{}\doxysection{E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/\+Animation.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_animation}{Animation}} \{}
+\DoxyCodeLine{6 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_animation_ab7191f02236ea279bd6e73d8caaf03d7}{Animation}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filePath, \textcolor{keywordtype}{int} allNum, \textcolor{keywordtype}{int} xNum, \textcolor{keywordtype}{int} yNum, \textcolor{keywordtype}{int} xSize, \textcolor{keywordtype}{int} ySize, \textcolor{keywordtype}{int} animFrameCnt, \textcolor{keywordtype}{bool} enabledLoop, \textcolor{keywordtype}{int} busyLevel = 0);}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{16     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_animation_a9b7eb711b687f53b51c6a90a29b21c7b}{update}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_animation_a903eb4b61b8c7bc72bbedbdba4cbb501}{reset}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_animation_af41f9bd815eca194613983db8497dcee}{getGraphHandle}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_animation_a0be8ef8e77f50b34e430846aada1a152}{getBusyLevel}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{private}:}
+\DoxyCodeLine{41     std::vector<int> sprites;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{int} spritesIdx;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* filePath;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} allNum;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{int} xNum;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} yNum;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{int} xSize;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{int} ySize;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{int} frameCnt;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{int} animFrameCnt;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{bool} enabledLoop;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74     \textcolor{keywordtype}{int} busyLevel;}
+\DoxyCodeLine{75 \};}
+
+\end{DoxyCode}

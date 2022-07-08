@@ -1,0 +1,27 @@
+\hypertarget{_animation_manager_8h_source}{}\doxysection{E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/\+Animation\+Manager.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Animation.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_animation_manager}{AnimationManager}} \{}
+\DoxyCodeLine{8 \textcolor{keyword}{public}:}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_animation_manager_a1a07273c87def56cab82a1795f29f2e4}{AnimationManager}}();}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_animation_manager_aa761a2d41f747e5fab865c3ceda70e2e}{add}}(std::shared\_ptr<Animation> animPtr);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_animation_manager_a8f022f72fccb827e3b4676af4bc595fc}{change}}(\textcolor{keywordtype}{int} idx, \textcolor{keywordtype}{bool} force = \textcolor{keyword}{false});}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_animation_manager_a5711cd6804130aa171f2d5aca3a00239}{update}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_animation_manager_a7ae52477e2bdcbb31914902d29938d6e}{draw}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{bool} turn);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{private}:}
+\DoxyCodeLine{44     std::vector<std::shared\_ptr<Animation>> animations;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47     \textcolor{keywordtype}{int} currentIdx;}
+\DoxyCodeLine{48 \};}
+
+\end{DoxyCode}

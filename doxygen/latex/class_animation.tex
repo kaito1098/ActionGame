@@ -1,0 +1,83 @@
+\hypertarget{class_animation}{}\doxysection{Animation クラス}
+\label{class_animation}\index{Animation@{Animation}}
+
+
+一つのスプライト画像を管理するアニメーションクラス  
+
+
+
+
+{\ttfamily \#include $<$Animation.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_animation_ab7191f02236ea279bd6e73d8caaf03d7}\label{class_animation_ab7191f02236ea279bd6e73d8caaf03d7}} 
+{\bfseries Animation} (const char $\ast$file\+Path, int all\+Num, int x\+Num, int y\+Num, int x\+Size, int y\+Size, int anim\+Frame\+Cnt, bool enabled\+Loop, int busy\+Level=0)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_animation_a9b7eb711b687f53b51c6a90a29b21c7b}{update}} ()
+\begin{DoxyCompactList}\small\item\em 必要に応じてスプライト画像のコマ数を進める \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_animation_a903eb4b61b8c7bc72bbedbdba4cbb501}\label{class_animation_a903eb4b61b8c7bc72bbedbdba4cbb501}} 
+void {\bfseries reset} ()
+\begin{DoxyCompactList}\small\item\em アニメーションを再生初期状態にリセットする \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_animation_af41f9bd815eca194613983db8497dcee}{get\+Graph\+Handle}} ()
+\begin{DoxyCompactList}\small\item\em 現在のスプライト画像の１コマの画像ハンドルを取得する \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_animation_a0be8ef8e77f50b34e430846aada1a152}{get\+Busy\+Level}} ()
+\begin{DoxyCompactList}\small\item\em ビジーレベルを取得する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+一つのスプライト画像を管理するアニメーションクラス 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_animation_a0be8ef8e77f50b34e430846aada1a152}\label{class_animation_a0be8ef8e77f50b34e430846aada1a152}} 
+\index{Animation@{Animation}!getBusyLevel@{getBusyLevel}}
+\index{getBusyLevel@{getBusyLevel}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getBusyLevel()}{getBusyLevel()}}
+{\footnotesize\ttfamily int Animation\+::get\+Busy\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ビジーレベルを取得する 
+
+\begin{DoxyReturn}{戻り値}
+現在のアニメーションのビジーレベル
+\end{DoxyReturn}
+ビジーレベルとは
+
+アニメーション（アクション）ごとの優先度を管理するための値。
+
+ビジーレベルの高いアニメーション再生中は、よりビジーレベルの低いアニメーションは割り込んで再生できない。
+
+（例：ジャンプ中（ビジーレベル１）は、左右に移動しても歩行アニメーション（ビジーレベル０）を再生しない） \mbox{\Hypertarget{class_animation_af41f9bd815eca194613983db8497dcee}\label{class_animation_af41f9bd815eca194613983db8497dcee}} 
+\index{Animation@{Animation}!getGraphHandle@{getGraphHandle}}
+\index{getGraphHandle@{getGraphHandle}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{getGraphHandle()}{getGraphHandle()}}
+{\footnotesize\ttfamily int Animation\+::get\+Graph\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+現在のスプライト画像の１コマの画像ハンドルを取得する 
+
+\begin{DoxyReturn}{戻り値}
+現在フレームで描画すべき画像ハンドル 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_animation_a9b7eb711b687f53b51c6a90a29b21c7b}\label{class_animation_a9b7eb711b687f53b51c6a90a29b21c7b}} 
+\index{Animation@{Animation}!update@{update}}
+\index{update@{update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool Animation\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+必要に応じてスプライト画像のコマ数を進める 
+
+\begin{DoxyReturn}{戻り値}
+true：最後のコマまでアニメーションが完了した、false：それ以外（ループ有効時は常にfalse） 
+\end{DoxyReturn}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Animation.\+h\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Animation.\+cpp\end{DoxyCompactItemize}

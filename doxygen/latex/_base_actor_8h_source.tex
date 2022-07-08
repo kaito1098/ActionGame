@@ -1,0 +1,41 @@
+\hypertarget{_base_actor_8h_source}{}\doxysection{E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/\+Base\+Actor.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}AnimationManager.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_base_actor}{BaseActor}} \{}
+\DoxyCodeLine{8 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_base_actor_a00b6a83447fde53a1143466c2c144b96}{BaseActor}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_a1a8d2e741588a5cce926f2fe7661cae4}{x}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_a65c80b1b5451dc7528a15a6bb4623c7d}{y}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_ac8b1ec53c1b7e166feb6ed8e7c689f8d}{speed}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_a239f5f996409d2cfad8dbf85a9835ec7}{xSize}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_afd567e8866ec7f4ededb7b6b822e6389}{ySize}});}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_base_actor_a6da4170057cb9ef088a75c4b5115bd6c}{update}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_base_actor_a5f845ddd24c37b2f8e6c1391a7d49fd9}{draw}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{31     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_a1a8d2e741588a5cce926f2fe7661cae4}{x}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_a65c80b1b5451dc7528a15a6bb4623c7d}{y}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_ac8b1ec53c1b7e166feb6ed8e7c689f8d}{speed}};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_a0bacfe548cc763059228be671c573904}{xSpeed}};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_aaa281d7846e52b27d15d2da923b9e1f6}{ySpeed}};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_a239f5f996409d2cfad8dbf85a9835ec7}{xSize}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_base_actor_afd567e8866ec7f4ededb7b6b822e6389}{ySize}};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_base_actor_a69d13559ea14c6484b6b68f1f90b6251}{turn}};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55     std::unique\_ptr<AnimationManager> \mbox{\hyperlink{class_base_actor_aeed71b7378f51337f96d4c384faf5423}{animationManagerPtr}};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_base_actor_a5e19cf4fb9a135b3c6ec9948d80c6f2d}{checkFalling}}();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{66     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_base_actor_ad53195e4c3e1853f31278c04b8c241d1}{setup}}() = 0;}
+\DoxyCodeLine{67 \};}
+
+\end{DoxyCode}

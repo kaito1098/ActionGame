@@ -23,7 +23,7 @@ void GameManager::init() {
 	SetLoopSamplePosSoundMem(384000, sound);
 	PlaySoundMem(sound, DX_PLAYTYPE_LOOP);
 	playerPtr = std::make_unique<Player>(100, GROUND_HEIGHT);
-	mushroomPtr = std::make_unique<EnemyMushroom>(500, GROUND_HEIGHT - 6);
+	mushroomPtr = std::make_unique<EnemyMushroom>(500, GROUND_HEIGHT);
 }
 
 void GameManager::update() {

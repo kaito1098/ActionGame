@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ActionGame: AnimationManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ActionGame
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_animation_manager.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="class_animation_manager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">AnimationManager クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>複数の <a class="el" href="class_animation.html" title="一つのスプライト画像を管理するアニメーションクラス">Animation</a> クラスを管理するマネージャクラス  
+ <a href="class_animation_manager.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_animation_manager_8h_source.html">AnimationManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a1a07273c87def56cab82a1795f29f2e4"><td class="memItemLeft" align="right" valign="top"><a id="a1a07273c87def56cab82a1795f29f2e4" name="a1a07273c87def56cab82a1795f29f2e4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AnimationManager</b> ()</td></tr>
+<tr class="memdesc:a1a07273c87def56cab82a1795f29f2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ <br /></td></tr>
+<tr class="separator:a1a07273c87def56cab82a1795f29f2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa761a2d41f747e5fab865c3ceda70e2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_manager.html#aa761a2d41f747e5fab865c3ceda70e2e">add</a> (std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt; animPtr)</td></tr>
+<tr class="memdesc:aa761a2d41f747e5fab865c3ceda70e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションクラスの登録  <a href="class_animation_manager.html#aa761a2d41f747e5fab865c3ceda70e2e">[詳解]</a><br /></td></tr>
+<tr class="separator:aa761a2d41f747e5fab865c3ceda70e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f022f72fccb827e3b4676af4bc595fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_manager.html#a8f022f72fccb827e3b4676af4bc595fc">change</a> (int idx, bool force=false)</td></tr>
+<tr class="memdesc:a8f022f72fccb827e3b4676af4bc595fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">再生するアニメーションを変更する  <a href="class_animation_manager.html#a8f022f72fccb827e3b4676af4bc595fc">[詳解]</a><br /></td></tr>
+<tr class="separator:a8f022f72fccb827e3b4676af4bc595fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5711cd6804130aa171f2d5aca3a00239"><td class="memItemLeft" align="right" valign="top"><a id="a5711cd6804130aa171f2d5aca3a00239" name="a5711cd6804130aa171f2d5aca3a00239"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+<tr class="memdesc:a5711cd6804130aa171f2d5aca3a00239"><td class="mdescLeft">&#160;</td><td class="mdescRight">再生中のアニメーションクラスの <a class="el" href="class_animation_manager.html#a5711cd6804130aa171f2d5aca3a00239" title="再生中のアニメーションクラスの update() を呼ぶ">update()</a> を呼ぶ <br /></td></tr>
+<tr class="separator:a5711cd6804130aa171f2d5aca3a00239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ae52477e2bdcbb31914902d29938d6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_manager.html#a7ae52477e2bdcbb31914902d29938d6e">draw</a> (int x, int y, bool turn)</td></tr>
+<tr class="memdesc:a7ae52477e2bdcbb31914902d29938d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">概要  <a href="class_animation_manager.html#a7ae52477e2bdcbb31914902d29938d6e">[詳解]</a><br /></td></tr>
+<tr class="separator:a7ae52477e2bdcbb31914902d29938d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p >複数の <a class="el" href="class_animation.html" title="一つのスプライト画像を管理するアニメーションクラス">Animation</a> クラスを管理するマネージャクラス </p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="aa761a2d41f747e5fab865c3ceda70e2e" name="aa761a2d41f747e5fab865c3ceda70e2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa761a2d41f747e5fab865c3ceda70e2e">&#9670;&nbsp;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimationManager::add </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td>
+          <td class="paramname"><em>animPtr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>アニメーションクラスの登録 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(animPtr)</td><td>アニメーションクラスの実体を指すポインタ</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>一番最初に追加したアニメーションがアイドル状態を表すアニメーションとなる。 </p>
+
+</div>
+</div>
+<a id="a8f022f72fccb827e3b4676af4bc595fc" name="a8f022f72fccb827e3b4676af4bc595fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f022f72fccb827e3b4676af4bc595fc">&#9670;&nbsp;</a></span>change()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AnimationManager::change </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>force</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>再生するアニメーションを変更する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(idx)</td><td>変更したいアニメーションの ID </td></tr>
+    <tr><td class="paramname">(force)</td><td>true の場合、ビジーレベルを無視して強制的に変更する（規定値：false） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ビジーレベルを考慮し、変更に成功した場合 true を返す </dd></dl>
+
+</div>
+</div>
+<a id="a7ae52477e2bdcbb31914902d29938d6e" name="a7ae52477e2bdcbb31914902d29938d6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ae52477e2bdcbb31914902d29938d6e">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimationManager::draw </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>turn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>概要 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(x)</td><td>描画位置（x軸方向） </td></tr>
+    <tr><td class="paramname">(y)</td><td>描画位置（y軸方向） </td></tr>
+    <tr><td class="paramname">(turn)</td><td>左右反転フラグ（true：反転、false：反転なし） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>E:/VisualStudio/kaito1098/ActionGame/<a class="el" href="_animation_manager_8h_source.html">AnimationManager.h</a></li>
+<li>E:/VisualStudio/kaito1098/ActionGame/AnimationManager.cpp</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_animation_manager.html">AnimationManager</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+\hypertarget{class_animation_manager}{}\doxysection{Animation\+Manager クラス}
+\label{class_animation_manager}\index{AnimationManager@{AnimationManager}}
+
+
+複数の \mbox{\hyperlink{class_animation}{Animation}} クラスを管理するマネージャクラス  
+
+
+
+
+{\ttfamily \#include $<$Animation\+Manager.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_animation_manager_a1a07273c87def56cab82a1795f29f2e4}\label{class_animation_manager_a1a07273c87def56cab82a1795f29f2e4}} 
+{\bfseries Animation\+Manager} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_manager_aa761a2d41f747e5fab865c3ceda70e2e}{add}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_animation}{Animation}} $>$ anim\+Ptr)
+\begin{DoxyCompactList}\small\item\em アニメーションクラスの登録 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_animation_manager_a8f022f72fccb827e3b4676af4bc595fc}{change}} (int idx, bool force=false)
+\begin{DoxyCompactList}\small\item\em 再生するアニメーションを変更する \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_animation_manager_a5711cd6804130aa171f2d5aca3a00239}\label{class_animation_manager_a5711cd6804130aa171f2d5aca3a00239}} 
+void {\bfseries update} ()
+\begin{DoxyCompactList}\small\item\em 再生中のアニメーションクラスの \mbox{\hyperlink{class_animation_manager_a5711cd6804130aa171f2d5aca3a00239}{update()}} を呼ぶ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_manager_a7ae52477e2bdcbb31914902d29938d6e}{draw}} (int x, int y, bool turn)
+\begin{DoxyCompactList}\small\item\em 概要 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+複数の \mbox{\hyperlink{class_animation}{Animation}} クラスを管理するマネージャクラス 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_animation_manager_aa761a2d41f747e5fab865c3ceda70e2e}\label{class_animation_manager_aa761a2d41f747e5fab865c3ceda70e2e}} 
+\index{AnimationManager@{AnimationManager}!add@{add}}
+\index{add@{add}!AnimationManager@{AnimationManager}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Animation\+Manager\+::add (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_animation}{Animation}} $>$}]{anim\+Ptr }\end{DoxyParamCaption})}
+
+
+
+アニメーションクラスの登録 
+
+
+\begin{DoxyParams}{引数}
+{\em (anim\+Ptr)} & アニメーションクラスの実体を指すポインタ\\
+\hline
+\end{DoxyParams}
+一番最初に追加したアニメーションがアイドル状態を表すアニメーションとなる。 \mbox{\Hypertarget{class_animation_manager_a8f022f72fccb827e3b4676af4bc595fc}\label{class_animation_manager_a8f022f72fccb827e3b4676af4bc595fc}} 
+\index{AnimationManager@{AnimationManager}!change@{change}}
+\index{change@{change}!AnimationManager@{AnimationManager}}
+\doxysubsubsection{\texorpdfstring{change()}{change()}}
+{\footnotesize\ttfamily bool Animation\+Manager\+::change (\begin{DoxyParamCaption}\item[{int}]{idx,  }\item[{bool}]{force = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+再生するアニメーションを変更する 
+
+
+\begin{DoxyParams}{引数}
+{\em (idx)} & 変更したいアニメーションの ID \\
+\hline
+{\em (force)} & true の場合、ビジーレベルを無視して強制的に変更する（規定値：false） \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+ビジーレベルを考慮し、変更に成功した場合 true を返す 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_animation_manager_a7ae52477e2bdcbb31914902d29938d6e}\label{class_animation_manager_a7ae52477e2bdcbb31914902d29938d6e}} 
+\index{AnimationManager@{AnimationManager}!draw@{draw}}
+\index{draw@{draw}!AnimationManager@{AnimationManager}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Animation\+Manager\+::draw (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{bool}]{turn }\end{DoxyParamCaption})}
+
+
+
+概要 
+
+
+\begin{DoxyParams}{引数}
+{\em (x)} & 描画位置（x軸方向） \\
+\hline
+{\em (y)} & 描画位置（y軸方向） \\
+\hline
+{\em (turn)} & 左右反転フラグ（true：反転、false：反転なし） \\
+\hline
+\end{DoxyParams}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Animation\+Manager.\+h\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Animation\+Manager.\+cpp\end{DoxyCompactItemize}

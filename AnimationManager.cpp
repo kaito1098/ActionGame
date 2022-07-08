@@ -5,14 +5,10 @@ AnimationManager::AnimationManager() :
 	currentIdx(0) {
 }
 
-//・アニメーションの追加（一番最初に追加したアニメーションがデフォルトとなる）
 void AnimationManager::add(std::shared_ptr<Animation> animPtr) {
 	animations.emplace_back(animPtr);
 }
 
-//・再生するアニメーションを変更する
-//・ビジーレベルを考慮し、変更に成功した場合trueを返す
-//・forceにtrueが渡されたとき、ビジーレベルを考慮しない（非ループアニメーション⇒アイドル状態への遷移を想定）
 bool AnimationManager::change(int idx, bool force) {
 	if (currentIdx != idx) {
 		if (force || animations[currentIdx]->getBusyLevel() <= animations[idx]->getBusyLevel()) {
@@ -28,7 +24,7 @@ bool AnimationManager::change(int idx, bool force) {
 
 void AnimationManager::update() {
 	if (animations[currentIdx]->update()) {
-		//・アニメーションが終了したらデフォルトアニメーションに遷移
+		//・アニメーションが終了したら ID = 0 のアニメーションに遷移
 		change(0, true);
 	}
 }
@@ -39,12 +35,4 @@ void AnimationManager::draw(int x, int y, bool turn) {
 	} else {
 		DrawGraph(x, y, animations[currentIdx]->getGraphHandle(), TRUE);
 	}
-}
-
-bool AnimationManager::isIdle() {
-	return currentIdx == 0;
-}
-
-int AnimationManager::getBusyLevel() {
-	return animations[currentIdx]->getBusyLevel();
 }

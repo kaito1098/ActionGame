@@ -1,0 +1,84 @@
+\hypertarget{class_enemy_mushroom}{}\doxysection{Enemy\+Mushroom クラス}
+\label{class_enemy_mushroom}\index{EnemyMushroom@{EnemyMushroom}}
+
+
+マッシュルームモンスター  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+Mushroom.\+h$>$}
+
+Enemy\+Mushroom の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_enemy_mushroom}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_mushroom_a8bdb6ff14ab1e1714dcfe801cadfbf09}{Enemy\+Mushroom}} (int \mbox{\hyperlink{class_base_actor_a1a8d2e741588a5cce926f2fe7661cae4}{x}}, int \mbox{\hyperlink{class_base_actor_a65c80b1b5451dc7528a15a6bb4623c7d}{y}})
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_enemy_mushroom_a160e86452b57bfd8a6425e1fd33b3318}{setup}} () override
+\begin{DoxyCompactList}\small\item\em AIによる挙動の実装 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+マッシュルームモンスター 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_enemy_mushroom_a8bdb6ff14ab1e1714dcfe801cadfbf09}\label{class_enemy_mushroom_a8bdb6ff14ab1e1714dcfe801cadfbf09}} 
+\index{EnemyMushroom@{EnemyMushroom}!EnemyMushroom@{EnemyMushroom}}
+\index{EnemyMushroom@{EnemyMushroom}!EnemyMushroom@{EnemyMushroom}}
+\doxysubsubsection{\texorpdfstring{EnemyMushroom()}{EnemyMushroom()}}
+{\footnotesize\ttfamily Enemy\+Mushroom\+::\+Enemy\+Mushroom (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+{\em \+\_\+x：初期位置（x座標）} & \\
+\hline
+{\em \+\_\+y：初期位置（y座標）} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{注釈}
+アニメーションの登録はここで行っている。 
+\end{DoxyRemark}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_enemy_mushroom_a160e86452b57bfd8a6425e1fd33b3318}\label{class_enemy_mushroom_a160e86452b57bfd8a6425e1fd33b3318}} 
+\index{EnemyMushroom@{EnemyMushroom}!setup@{setup}}
+\index{setup@{setup}!EnemyMushroom@{EnemyMushroom}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void Enemy\+Mushroom\+::setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+AIによる挙動の実装 
+
+\begin{DoxyRemark}{注釈}
+平常時は一定間隔で左右に徘徊するのみ。 
+
+プレイヤーが一定範囲に近づくと、プレイヤーに近づいていく。 
+
+攻撃可能範囲になったら攻撃モーションに入る。 
+\end{DoxyRemark}
+
+
+\mbox{\hyperlink{class_base_actor_ad53195e4c3e1853f31278c04b8c241d1}{Base\+Actor}}を実装しています。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Enemy\+Mushroom.\+h\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Enemy\+Mushroom.\+cpp\end{DoxyCompactItemize}

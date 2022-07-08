@@ -1,0 +1,26 @@
+\hypertarget{_game_manager_8h_source}{}\doxysection{E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/\+Game\+Manager.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Player.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}EnemyMushroom.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_manager}{GameManager}} \{}
+\DoxyCodeLine{8 \textcolor{keyword}{public}:}
+\DoxyCodeLine{12     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_a822b1dae42473cc1587ac22c58e3d8b4}{main}}();}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{private}:}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} update();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} draw();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31     std::unique\_ptr<Player> playerPtr;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{comment}{//・TODO：EnemyはManager管理にする}}
+\DoxyCodeLine{35 \textcolor{comment}{}    std::unique\_ptr<EnemyMushroom> mushroomPtr;}
+\DoxyCodeLine{36 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,86 @@
+\hypertarget{class_player}{}\doxysection{Player クラス}
+\label{class_player}\index{Player@{Player}}
+
+
+プレイヤーキャラクター  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+Player の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_a9b009cc0bebdcc27a837d50b1f4ededd}{Player}} (int \mbox{\hyperlink{class_base_actor_a1a8d2e741588a5cce926f2fe7661cae4}{x}}, int \mbox{\hyperlink{class_base_actor_a65c80b1b5451dc7528a15a6bb4623c7d}{y}})
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_a5f713591bcb1153662a26f27737ca025}{setup}} () override
+\begin{DoxyCompactList}\small\item\em キー入力による操作の実装 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+プレイヤーキャラクター 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_player_a9b009cc0bebdcc27a837d50b1f4ededd}\label{class_player_a9b009cc0bebdcc27a837d50b1f4ededd}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+{\em \+\_\+x：初期位置（x座標）} & \\
+\hline
+{\em \+\_\+y：初期位置（y座標）} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{注釈}
+アニメーションの登録はここで行っている。 
+\end{DoxyRemark}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_player_a5f713591bcb1153662a26f27737ca025}\label{class_player_a5f713591bcb1153662a26f27737ca025}} 
+\index{Player@{Player}!setup@{setup}}
+\index{setup@{setup}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void Player\+::setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+キー入力による操作の実装 
+
+\begin{DoxyRemark}{注釈}
+十字キーで移動 TODO：2回押すとローリング 
+
+Zキーでジャンプ 
+
+Xキーで攻撃 
+
+LShiftキーでバックステップ 
+\end{DoxyRemark}
+
+
+\mbox{\hyperlink{class_base_actor_ad53195e4c3e1853f31278c04b8c241d1}{Base\+Actor}}を実装しています。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Player.\+h\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Player.\+cpp\end{DoxyCompactItemize}

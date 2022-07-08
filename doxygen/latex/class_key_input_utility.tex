@@ -1,0 +1,61 @@
+\hypertarget{class_key_input_utility}{}\doxysection{Key\+Input\+Utility クラス}
+\label{class_key_input_utility}\index{KeyInputUtility@{KeyInputUtility}}
+
+
+キー入力に関する機能をまとめたクラス  
+
+
+
+
+{\ttfamily \#include $<$Key\+Input\+Utility.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_key_input_utility_a02dbc39ff758dbe5884262711b81d552}\label{class_key_input_utility_a02dbc39ff758dbe5884262711b81d552}} 
+{\bfseries Key\+Input\+Utility} (int key\+Code)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_key_input_utility_ae61653ae9738617472d30bd672a464fb}{on\+Pressed}} ()
+\begin{DoxyCompactList}\small\item\em キーが押されているか？（チャタリング考慮なし） \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_key_input_utility_ae7ef1549f6c0a4286c7c1867d0c88ccd}{on\+Pressed\+Once}} ()
+\begin{DoxyCompactList}\small\item\em キーが押されているか？ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+キー入力に関する機能をまとめたクラス 
+
+基本的には namespace Key\+Input にて定義された実体を利用すること。 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_key_input_utility_ae61653ae9738617472d30bd672a464fb}\label{class_key_input_utility_ae61653ae9738617472d30bd672a464fb}} 
+\index{KeyInputUtility@{KeyInputUtility}!onPressed@{onPressed}}
+\index{onPressed@{onPressed}!KeyInputUtility@{KeyInputUtility}}
+\doxysubsubsection{\texorpdfstring{onPressed()}{onPressed()}}
+{\footnotesize\ttfamily bool Key\+Input\+Utility\+::on\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+キーが押されているか？（チャタリング考慮なし） 
+
+\begin{DoxyReturn}{戻り値}
+true：押されている、false：押されていない
+\end{DoxyReturn}
+押されている間、毎フレーム true を返却し続ける \mbox{\Hypertarget{class_key_input_utility_ae7ef1549f6c0a4286c7c1867d0c88ccd}\label{class_key_input_utility_ae7ef1549f6c0a4286c7c1867d0c88ccd}} 
+\index{KeyInputUtility@{KeyInputUtility}!onPressedOnce@{onPressedOnce}}
+\index{onPressedOnce@{onPressedOnce}!KeyInputUtility@{KeyInputUtility}}
+\doxysubsubsection{\texorpdfstring{onPressedOnce()}{onPressedOnce()}}
+{\footnotesize\ttfamily bool Key\+Input\+Utility\+::on\+Pressed\+Once (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+キーが押されているか？ 
+
+\begin{DoxyReturn}{戻り値}
+true：押されている、false：押されていない
+\end{DoxyReturn}
+押された瞬間のフレームのみ true を返却する（毎フレーム判定している前提） 
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Key\+Input\+Utility.\+h\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Key\+Input\+Utility.\+cpp\end{DoxyCompactItemize}

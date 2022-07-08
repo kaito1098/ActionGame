@@ -1,0 +1,130 @@
+\hypertarget{class_base_actor}{}\doxysection{Base\+Actor クラス}
+\label{class_base_actor}\index{BaseActor@{BaseActor}}
+
+
+アニメーションとコリジョンを保持するキャラクターの基底クラス  
+
+
+
+
+{\ttfamily \#include $<$Base\+Actor.\+h$>$}
+
+Base\+Actor の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_base_actor}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_actor_a00b6a83447fde53a1143466c2c144b96}{Base\+Actor}} (int \mbox{\hyperlink{class_base_actor_a1a8d2e741588a5cce926f2fe7661cae4}{x}}, int \mbox{\hyperlink{class_base_actor_a65c80b1b5451dc7528a15a6bb4623c7d}{y}}, int \mbox{\hyperlink{class_base_actor_ac8b1ec53c1b7e166feb6ed8e7c689f8d}{speed}}, int \mbox{\hyperlink{class_base_actor_a239f5f996409d2cfad8dbf85a9835ec7}{x\+Size}}, int \mbox{\hyperlink{class_base_actor_afd567e8866ec7f4ededb7b6b822e6389}{y\+Size}})
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_actor_a6da4170057cb9ef088a75c4b5115bd6c}\label{class_base_actor_a6da4170057cb9ef088a75c4b5115bd6c}} 
+void {\bfseries update} ()
+\begin{DoxyCompactList}\small\item\em 位置情報、アニメーションなどの更新処理 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_actor_a5f845ddd24c37b2f8e6c1391a7d49fd9}\label{class_base_actor_a5f845ddd24c37b2f8e6c1391a7d49fd9}} 
+void {\bfseries draw} ()
+\begin{DoxyCompactList}\small\item\em 現在の状態に基づいた描画処理 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_base_actor_a5e19cf4fb9a135b3c6ec9948d80c6f2d}{check\+Falling}} ()
+\begin{DoxyCompactList}\small\item\em 落下しているかどうか（着地しているかどうか） \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_base_actor_ad53195e4c3e1853f31278c04b8c241d1}{setup}} ()=0
+\begin{DoxyCompactList}\small\item\em 【仮想関数】update()が呼ばれる前のセットアップ（キー入力や\+AI操作による移動速度の決定など） \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_base_actor_a1a8d2e741588a5cce926f2fe7661cae4}\label{class_base_actor_a1a8d2e741588a5cce926f2fe7661cae4}} 
+int {\bfseries x}
+\begin{DoxyCompactList}\small\item\em 描画座標（x軸） \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_actor_a65c80b1b5451dc7528a15a6bb4623c7d}\label{class_base_actor_a65c80b1b5451dc7528a15a6bb4623c7d}} 
+int {\bfseries y}
+\begin{DoxyCompactList}\small\item\em 描画座標（y軸） \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_actor_ac8b1ec53c1b7e166feb6ed8e7c689f8d}\label{class_base_actor_ac8b1ec53c1b7e166feb6ed8e7c689f8d}} 
+int {\bfseries speed}
+\begin{DoxyCompactList}\small\item\em 基準となる移動スピード \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_actor_a0bacfe548cc763059228be671c573904}\label{class_base_actor_a0bacfe548cc763059228be671c573904}} 
+int {\bfseries x\+Speed}
+\begin{DoxyCompactList}\small\item\em １フレームあたりの移動距離（x軸） \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_actor_aaa281d7846e52b27d15d2da923b9e1f6}\label{class_base_actor_aaa281d7846e52b27d15d2da923b9e1f6}} 
+int {\bfseries y\+Speed}
+\begin{DoxyCompactList}\small\item\em １フレームあたりの移動距離（y軸） \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_actor_a239f5f996409d2cfad8dbf85a9835ec7}\label{class_base_actor_a239f5f996409d2cfad8dbf85a9835ec7}} 
+int {\bfseries x\+Size}
+\begin{DoxyCompactList}\small\item\em 画像の横幅（ピクセル） \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_actor_afd567e8866ec7f4ededb7b6b822e6389}\label{class_base_actor_afd567e8866ec7f4ededb7b6b822e6389}} 
+int {\bfseries y\+Size}
+\begin{DoxyCompactList}\small\item\em 画像の縦幅（ピクセル） \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_actor_a69d13559ea14c6484b6b68f1f90b6251}\label{class_base_actor_a69d13559ea14c6484b6b68f1f90b6251}} 
+bool {\bfseries turn}
+\begin{DoxyCompactList}\small\item\em 左右反転描画フラグ（true：右向き、false：左向き） \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_actor_aeed71b7378f51337f96d4c384faf5423}\label{class_base_actor_aeed71b7378f51337f96d4c384faf5423}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_animation_manager}{Animation\+Manager}} $>$ {\bfseries animation\+Manager\+Ptr}
+\begin{DoxyCompactList}\small\item\em アニメーションマネージャへのポインタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+アニメーションとコリジョンを保持するキャラクターの基底クラス 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_base_actor_a00b6a83447fde53a1143466c2c144b96}\label{class_base_actor_a00b6a83447fde53a1143466c2c144b96}} 
+\index{BaseActor@{BaseActor}!BaseActor@{BaseActor}}
+\index{BaseActor@{BaseActor}!BaseActor@{BaseActor}}
+\doxysubsubsection{\texorpdfstring{BaseActor()}{BaseActor()}}
+{\footnotesize\ttfamily Base\+Actor\+::\+Base\+Actor (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{speed,  }\item[{int}]{x\+Size,  }\item[{int}]{y\+Size }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+{\em \+\_\+x：初期位置（x座標）} & \\
+\hline
+{\em \+\_\+y：初期位置（y座標）} & \\
+\hline
+{\em \+\_\+speed：移動速度} & \\
+\hline
+{\em \+\_\+x\+Size：画像の横幅} & \\
+\hline
+{\em \+\_\+y\+Size：画像の縦幅} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_base_actor_a5e19cf4fb9a135b3c6ec9948d80c6f2d}\label{class_base_actor_a5e19cf4fb9a135b3c6ec9948d80c6f2d}} 
+\index{BaseActor@{BaseActor}!checkFalling@{checkFalling}}
+\index{checkFalling@{checkFalling}!BaseActor@{BaseActor}}
+\doxysubsubsection{\texorpdfstring{checkFalling()}{checkFalling()}}
+{\footnotesize\ttfamily bool Base\+Actor\+::check\+Falling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+落下しているかどうか（着地しているかどうか） 
+
+\begin{DoxyReturn}{戻り値}
+true：落下している、false：落下していない 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_base_actor_ad53195e4c3e1853f31278c04b8c241d1}\label{class_base_actor_ad53195e4c3e1853f31278c04b8c241d1}} 
+\index{BaseActor@{BaseActor}!setup@{setup}}
+\index{setup@{setup}!BaseActor@{BaseActor}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily virtual void Base\+Actor\+::setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+【仮想関数】update()が呼ばれる前のセットアップ（キー入力や\+AI操作による移動速度の決定など） 
+
+
+
+\mbox{\hyperlink{class_enemy_mushroom_a160e86452b57bfd8a6425e1fd33b3318}{Enemy\+Mushroom}}, \mbox{\hyperlink{class_player_a5f713591bcb1153662a26f27737ca025}{Player}}で実装されています。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Base\+Actor.\+h\item 
+E\+:/\+Visual\+Studio/kaito1098/\+Action\+Game/Base\+Actor.\+cpp\end{DoxyCompactItemize}

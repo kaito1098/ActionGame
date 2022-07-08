@@ -5,12 +5,8 @@ Animation::Animation(const char* _filePath, int _allNum, int _xNum, int _yNum, i
 	spritesIdx(0), frameCnt(0),
 	filePath(_filePath), allNum(_allNum), xNum(_xNum), yNum(_yNum), xSize(_xSize), ySize(_ySize),
 	animFrameCnt(_animFrameCnt), enabledLoop(_enabledLoop), busyLevel(_busyLevel) {
-	sprites = new int[allNum];
-	LoadDivGraph(filePath, allNum, xNum, yNum, xSize, ySize, sprites);
-}
-
-Animation::~Animation() {
-	delete[] sprites;
+	sprites = std::vector<int>(allNum);
+	LoadDivGraph(filePath, allNum, xNum, yNum, xSize, ySize, sprites.data());
 }
 
 bool Animation::update() {
@@ -19,7 +15,6 @@ bool Animation::update() {
 		spritesIdx++;
 	}
 	if (spritesIdx == allNum) {
-		//・アニメーション完了時、trueを返す（ループ有効時は常にfalse）
 		spritesIdx = 0;
 		return !enabledLoop;
 	}

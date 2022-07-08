@@ -31,12 +31,6 @@
     <Filter Include="ヘッダー ファイル\Utility">
       <UniqueIdentifier>{ef996054-8a44-4761-8d5f-e0f6a11c13f4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Collision">
-      <UniqueIdentifier>{125fa2c0-60c6-4bf4-b55a-3c4f48ff5da6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\Collision">
-      <UniqueIdentifier>{1171ca3f-6018-4b1d-80f4-b003d32ac15a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -66,15 +60,6 @@
     <ClCompile Include="EnemyMushroom.cpp">
       <Filter>ソース ファイル\Actor</Filter>
     </ClCompile>
-    <ClCompile Include="RectCollider.cpp">
-      <Filter>ソース ファイル\Collision</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseCollider.cpp">
-      <Filter>ソース ファイル\Collision</Filter>
-    </ClCompile>
-    <ClCompile Include="ColliderManager.cpp">
-      <Filter>ソース ファイル\Collision</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -103,15 +88,6 @@
     </ClInclude>
     <ClInclude Include="EnemyMushroom.h">
       <Filter>ヘッダー ファイル\Actor</Filter>
-    </ClInclude>
-    <ClInclude Include="RectCollider.h">
-      <Filter>ヘッダー ファイル\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseCollider.h">
-      <Filter>ヘッダー ファイル\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="ColliderManager.h">
-      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

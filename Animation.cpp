@@ -1,12 +1,12 @@
 #include "Animation.h"
 #include "DxLib.h"
 
-Animation::Animation(const char* _filePath, int _allNum, int _xNum, int _yNum, int _xSize, int _ySize, int _animFrameCnt, bool _enabledLoop, int _busyLevel) :
+Animation::Animation(std::string _filePath, int _allNum, int _xNum, int _yNum, int _xSize, int _ySize, int _animFrameCnt, bool _enabledLoop, int _busyLevel) :
 	spritesIdx(0), frameCnt(0),
-	filePath(_filePath), allNum(_allNum), xNum(_xNum), yNum(_yNum), xSize(_xSize), ySize(_ySize),
+	allNum(_allNum), xNum(_xNum), yNum(_yNum), xSize(_xSize), ySize(_ySize),
 	animFrameCnt(_animFrameCnt), enabledLoop(_enabledLoop), busyLevel(_busyLevel) {
 	sprites = std::vector<int>(allNum);
-	LoadDivGraph(filePath, allNum, xNum, yNum, xSize, ySize, sprites.data());
+	LoadDivGraph(_filePath.c_str(), allNum, xNum, yNum, xSize, ySize, sprites.data());
 }
 
 bool Animation::update() {

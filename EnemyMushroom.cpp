@@ -48,7 +48,6 @@ void EnemyMushroom::setup() {
 				xSpeed = speed;
 			}
 			step = 0;
-			break;
 		}
 	}
 }

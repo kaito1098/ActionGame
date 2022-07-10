@@ -31,6 +31,12 @@
     <Filter Include="ヘッダー ファイル\Utility">
       <UniqueIdentifier>{ef996054-8a44-4761-8d5f-e0f6a11c13f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Map">
+      <UniqueIdentifier>{9002824e-70a5-418c-82cf-6e27399c5e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Map">
+      <UniqueIdentifier>{e7ec16b4-403d-4ba3-936a-33f62f8e24be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -60,6 +66,9 @@
     <ClCompile Include="EnemyMushroom.cpp">
       <Filter>ソース ファイル\Actor</Filter>
     </ClCompile>
+    <ClCompile Include="BaseMap.cpp">
+      <Filter>ソース ファイル\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -88,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="EnemyMushroom.h">
       <Filter>ヘッダー ファイル\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseMap.h">
+      <Filter>ヘッダー ファイル\Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

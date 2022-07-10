@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 
 /** @brief 一つのスプライト画像を管理するアニメーションクラス */
 class Animation {
@@ -7,7 +8,7 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	Animation(const char* filePath, int allNum, int xNum, int yNum, int xSize, int ySize, int animFrameCnt, bool enabledLoop, int busyLevel = 0);
+	Animation(std::string filePath, int allNum, int xNum, int yNum, int xSize, int ySize, int animFrameCnt, bool enabledLoop, int busyLevel = 0);
 
 	/**
 	 * @brief 必要に応じてスプライト画像のコマ数を進める
@@ -42,9 +43,6 @@ private:
 
 	/** @brief sprites[] から現在のコマを指定するためのインデックス */
 	int spritesIdx;
-
-	/** @brief スプライト画像のファイルパス */
-	const char* filePath;
 
 	/** @brief スプライト画像の分割総数 */
 	int allNum;

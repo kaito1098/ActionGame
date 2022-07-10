@@ -7,7 +7,7 @@ class BaseMap {
 public:
     /**
      * @brief コンストラクタ
-     * @param () datファイルパス
+     * @param (datFilePath) datファイルパス
      * @details タイルセット画像の読込処理はここで行っている。
      */
     BaseMap(std::string datFilePath);
@@ -16,7 +16,7 @@ public:
      * @brief マップの描画処理
      */
     void draw();
-    
+
 private:
     /** @brief datファイルパス */
     std::string m_datFilePath;
@@ -49,9 +49,16 @@ private:
     std::vector<int> m_mapData;
 
     /**
+     * @brief 通行設定（１マスごとに指定される通行設定）
+     * @details 通行設定は4ビットで表現する。
+     * @details 1ビット目から上、右、下、左の通行設定で、0：通行可、1：通行不可。
+     * @details 例）0000：全方向通行可、1100：上と右のみ通行可、1111：全方向通行不可
+     */
+    std::vector<unsigned int> m_passData;
+
+    /**
      * @brief マップデータの読込処理
      * @param (datFilePath) datファイルパス
-     * @return 戻り値の説明
      */
     void loadMapData();
 };

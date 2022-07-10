@@ -13,7 +13,7 @@ BaseMap::BaseMap(std::string datFilePath) :
 void BaseMap::draw() {
     for (int i = 0; i < m_mapSizeX; i++) {
         for (int j = 0; j < m_mapSizeY; j++) {
-            DrawGraph(m_tileSizeX * i, m_tileSizeY * j, m_tilesetHandle[m_mapData[i + j * 20]], TRUE);
+            DrawGraph(m_tileSizeX * i, m_tileSizeY * j, m_tilesetHandle[m_mapData[i + j * m_tileNumX]], TRUE);
         }
     }
 }
@@ -64,10 +64,21 @@ void BaseMap::loadMapData() {
         }
 
         //・4行目以降：マップデータ
-        while (std::getline(ifs, line)) {
+        for (int i = 0; i < m_mapSizeY; i++) {
+            std::getline(ifs, line);
             iss = std::istringstream(line);
-            while (std::getline(iss, field, DELIMITER)) {
+            for (int j = 0; j < m_mapSizeX; j++) {
+                std::getline(iss, field, DELIMITER);
                 m_mapData.emplace_back(stoi(field));
+            }
+        }
+        //・通行設定
+        for (int i = 0; i < m_mapSizeY; i++) {
+            std::getline(ifs, line);
+            iss = std::istringstream(line);
+            for (int j = 0; j < m_mapSizeX; j++) {
+                std::getline(iss, field, DELIMITER);
+                m_passData.emplace_back(stoi(field, 0, 2));
             }
         }
     }

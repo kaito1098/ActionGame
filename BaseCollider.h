@@ -1,16 +1,27 @@
 #pragma once
-#include "BaseActor.h"
-#include "Common.h"
 #include <memory>
+#include "BaseActor.h"
 
+/** @brief 当たり判定の基底クラス */
+template <class T>
 class BaseCollider {
-public:
-    BaseCollider(std::shared_ptr<BaseActor> holderPtr);
-    void hit(std::shared_ptr<BaseActor> object);
 protected:
-    std::shared_ptr<BaseActor> holderPtr;
-    int colliderIdx;    //・空間内のColliderリストにおけるインデックス（四分木管理用）
-    virtual void pushCollidersTree() = 0;
-    unsigned long getNodeIndexForRect(int left, int top, int right, int bottom);
-    unsigned long getNodeIndexForPoint(int x, int y);
+    /** @brief コンストラクタ */
+    BaseCollider(std::shared_ptr<T> holder, int dx, int dy);
+
+    /** @brief Collider を保持する Actor クラスを指すポインタ */
+    std::shared_ptr<T> m_holderPtr;
+
+    /** @brief 当たり判定を保持するオブジェクトからの相対座標（x軸方向） */
+    int m_dx;
+
+    /** @brief 当たり判定を保持するオブジェクトからの相対座標（y軸方向） */
+    int m_dy;
+
+    /**
+     * @brief 【仮想関数】マップ地形との当たり判定
+     * @param (arg) 
+     * @return 戻り値の説明
+     */
+    virtual bool isCollide() = 0;
 };

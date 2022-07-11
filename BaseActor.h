@@ -26,33 +26,45 @@ public:
      */
     void draw();
 
+    /**
+     * @brief 描画座標（x軸）のゲッター
+     * @return 描画座標（x軸）
+     */
+    int x();
+
+    /**
+     * @brief 描画座標（y軸）のゲッター
+     * @return 描画座標（y軸）
+     */
+    int y();
+
 protected:
     /** @brief 描画座標（x軸） */
-    int x;
+    int m_x;
 
     /** @brief 描画座標（y軸） */
-    int y;
+    int m_y;
 
     /** @brief 基準となる移動スピード */
-    int speed;
+    int m_baseSpeed;
 
     /** @brief １フレームあたりの移動距離（x軸） */
-    int xSpeed;
+    int m_xSpeed;
 
     /** @brief １フレームあたりの移動距離（y軸） */
-    int ySpeed;
+    int m_ySpeed;
 
-    /** @brief 画像の横幅（ピクセル） */
-    int xSize;
+    /** @brief 画像の横幅 */
+    int m_xSize;
 
-    /** @brief 画像の縦幅（ピクセル） */
-    int ySize;
+    /** @brief 画像の縦幅 */
+    int m_ySize;
 
     /** @brief 左右反転描画フラグ（true：右向き、false：左向き） */
-    bool turn;
+    bool m_turn;
 
     /** @brief アニメーションマネージャへのポインタ */
-    std::unique_ptr<AnimationManager> animationManagerPtr;
+    std::unique_ptr<AnimationManager> m_animationManagerPtr;
 
     /**
      * @brief 落下しているかどうか（着地しているかどうか）

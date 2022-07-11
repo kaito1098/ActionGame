@@ -37,6 +37,12 @@
     <Filter Include="ヘッダー ファイル\Map">
       <UniqueIdentifier>{e7ec16b4-403d-4ba3-936a-33f62f8e24be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Collision">
+      <UniqueIdentifier>{e732ec42-e4d0-4d9b-a96a-dd7b881bfea1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Collision">
+      <UniqueIdentifier>{f7a18ced-d878-4f83-9b14-f4224f0f02d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -69,6 +75,12 @@
     <ClCompile Include="BaseMap.cpp">
       <Filter>ソース ファイル\Map</Filter>
     </ClCompile>
+    <ClCompile Include="BaseCollider.cpp">
+      <Filter>ソース ファイル\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="RectCollider.cpp">
+      <Filter>ソース ファイル\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -100,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="BaseMap.h">
       <Filter>ヘッダー ファイル\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCollider.h">
+      <Filter>ヘッダー ファイル\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="RectCollider.h">
+      <Filter>ヘッダー ファイル\Collision</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

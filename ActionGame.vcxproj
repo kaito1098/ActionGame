@@ -154,6 +154,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationManager.cpp" />
     <ClCompile Include="BaseActor.cpp" />
+    <ClCompile Include="BaseCollider.cpp" />
     <ClCompile Include="BaseMap.cpp" />
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="EnemyMushroom.cpp" />
@@ -161,11 +162,13 @@
     <ClCompile Include="KeyInputUtility.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RectCollider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationManager.h" />
     <ClInclude Include="BaseActor.h" />
+    <ClInclude Include="BaseCollider.h" />
     <ClInclude Include="BaseMap.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="EnemyMushroom.h" />
@@ -173,6 +176,7 @@
     <ClInclude Include="KeyInput.h" />
     <ClInclude Include="KeyInputUtility.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="RectCollider.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

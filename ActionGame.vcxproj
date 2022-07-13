@@ -155,6 +155,7 @@
     <ClCompile Include="AnimationManager.cpp" />
     <ClCompile Include="BaseActor.cpp" />
     <ClCompile Include="BaseCollider.cpp" />
+    <ClCompile Include="IColliderHolder.cpp" />
     <ClCompile Include="KeyInputUtility.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Common.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="AnimationManager.h" />
     <ClInclude Include="BaseActor.h" />
     <ClInclude Include="BaseCollider.h" />
+    <ClInclude Include="IColliderHolder.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="EnemyMushroom.h" />

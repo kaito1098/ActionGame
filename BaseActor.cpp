@@ -17,14 +17,6 @@ void BaseActor::draw() {
 	m_animationManagerPtr->draw(m_x - m_xSize / 2, m_y - m_ySize, m_turn);
 }
 
-int BaseActor::x() {
-	return m_x;
-}
-
-int BaseActor::y() {
-	return m_y;
-}
-
 bool BaseActor::checkFalling() {
 	//TODOFÀÛ‚É‚Í‚Ç‚¤”»’è‚·‚×‚«‚©H
 	return m_y < (GROUND_HEIGHT);

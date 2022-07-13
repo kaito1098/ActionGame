@@ -23,4 +23,17 @@ extern const int MAX_FALL_SPEED;
 extern const int GROUND_HEIGHT;
 
 /** @brief マップ当たり判定種別（列挙帯） */
-enum class MapCollideID;
+enum class MapCollideID {
+    passable = 0,
+    impassable = 1,
+    jumpPassable = 2,
+    squatPassable = 3,
+    rightStair = 4,
+    leftStair = 5,
+};
+
+/** @brief 当たり判定種別（列挙帯） */
+enum class ColliderID {
+    Player = 0,
+    Enemy = 1,
+};

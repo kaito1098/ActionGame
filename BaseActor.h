@@ -31,18 +31,6 @@ public:
      */
     void draw();
 
-    /**
-     * @brief 描画座標（x軸）のゲッター
-     * @return 描画座標（x軸）
-     */
-    int x();
-
-    /**
-     * @brief 描画座標（y軸）のゲッター
-     * @return 描画座標（y軸）
-     */
-    int y();
-
 protected:
     /** @brief 描画座標（x軸） */
     int m_x;

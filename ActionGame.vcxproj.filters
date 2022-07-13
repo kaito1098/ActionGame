@@ -16,9 +16,6 @@
     <Filter Include="ソース ファイル\Actor">
       <UniqueIdentifier>{11ec267c-9d55-414b-90f4-71bf03b15ad4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Utility">
-      <UniqueIdentifier>{3434ad22-d9c3-4ae4-97c1-3031d468d5e0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Component">
       <UniqueIdentifier>{1dd82dc3-0a0d-4b4a-aee2-433f253f7fb1}</UniqueIdentifier>
     </Filter>
@@ -43,6 +40,9 @@
     <Filter Include="ヘッダー ファイル\Collision">
       <UniqueIdentifier>{f7a18ced-d878-4f83-9b14-f4224f0f02d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Utility">
+      <UniqueIdentifier>{f0e01a8e-f6e8-4abd-a918-1ccfa1a662c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -60,9 +60,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>ソース ファイル\Actor</Filter>
     </ClCompile>
-    <ClCompile Include="KeyInputUtility.cpp">
-      <Filter>ソース ファイル\Utility</Filter>
-    </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>ソース ファイル\Component</Filter>
     </ClCompile>
@@ -72,7 +69,7 @@
     <ClCompile Include="EnemyMushroom.cpp">
       <Filter>ソース ファイル\Actor</Filter>
     </ClCompile>
-    <ClCompile Include="BaseMap.cpp">
+    <ClCompile Include="Map.cpp">
       <Filter>ソース ファイル\Map</Filter>
     </ClCompile>
     <ClCompile Include="BaseCollider.cpp">
@@ -80,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="RectCollider.cpp">
       <Filter>ソース ファイル\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyInputUtility.cpp">
+      <Filter>ソース ファイル\Utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,7 +110,7 @@
     <ClInclude Include="EnemyMushroom.h">
       <Filter>ヘッダー ファイル\Actor</Filter>
     </ClInclude>
-    <ClInclude Include="BaseMap.h">
+    <ClInclude Include="Map.h">
       <Filter>ヘッダー ファイル\Map</Filter>
     </ClInclude>
     <ClInclude Include="BaseCollider.h">

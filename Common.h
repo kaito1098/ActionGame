@@ -21,3 +21,6 @@ extern const int MAX_FALL_SPEED;
 //・TODO：テスト用なのであとで消す
 /** @brief 地面の高さ */
 extern const int GROUND_HEIGHT;
+
+/** @brief マップ当たり判定種別（列挙帯） */
+enum class MapCollideID;

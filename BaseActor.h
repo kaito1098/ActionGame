@@ -17,6 +17,11 @@ public:
     BaseActor(int x, int y, int speed, int xSize, int ySize);
 
     /**
+     * @brief 【仮想関数】デストラクタ
+     */
+    virtual ~BaseActor() = default;
+
+    /**
      * @brief 位置情報、アニメーションなどの更新処理
      */
     void update();

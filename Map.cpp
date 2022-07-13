@@ -1,24 +1,24 @@
 #include "DxLib.h"
-#include "BaseMap.h"
+#include "Map.h"
 #include <fstream>
 #include <sstream>
 
-BaseMap::BaseMap(std::string datFilePath) :
+Map::Map(std::string datFilePath) :
     m_datFilePath(datFilePath) {
     loadMapData();
     m_tilesetHandle = std::vector<int>(m_tileNumX * m_tileNumY);
     LoadDivGraph(m_tilesetFilePath.c_str(), m_tileNumX * m_tileNumY, m_tileNumX, m_tileNumY, m_tileSizeX, m_tileSizeY, m_tilesetHandle.data());
 }
 
-void BaseMap::draw() {
-    for (int i = 0; i < m_mapSizeX; i++) {
-        for (int j = 0; j < m_mapSizeY; j++) {
-            DrawGraph(m_tileSizeX * i, m_tileSizeY * j, m_tilesetHandle[m_mapData[i + j * m_tileNumX]], TRUE);
+void Map::draw() {
+    for (int i = 0; i < m_mapSizeY; i++) {
+        for (int j = 0; j < m_mapSizeX; j++) {
+            DrawGraph(m_tileSizeX * j, m_tileSizeY * i, m_tilesetHandle[m_mapData[j + i * m_mapSizeX]], TRUE);
         }
     }
 }
 
-void BaseMap::loadMapData() {
+void Map::loadMapData() {
     const char DELIMITER = ',';
     std::ifstream ifs(m_datFilePath);
     std::istringstream iss;
@@ -78,7 +78,7 @@ void BaseMap::loadMapData() {
             iss = std::istringstream(line);
             for (int j = 0; j < m_mapSizeX; j++) {
                 std::getline(iss, field, DELIMITER);
-                m_passData.emplace_back(stoi(field, 0, 2));
+                m_passData.emplace_back(static_cast<MapCollideID>(stoi(field)));
             }
         }
     }

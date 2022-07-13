@@ -1,16 +1,24 @@
 #pragma once
+#include "Common.h"
 #include <vector>
 #include <string>
 
+enum class MapCollideID;
+
 /** @brief マップの基底クラス */
-class BaseMap {
+class Map {
 public:
     /**
      * @brief コンストラクタ
      * @param (datFilePath) datファイルパス
      * @details タイルセット画像の読込処理はここで行っている。
      */
-    BaseMap(std::string datFilePath);
+    Map(std::string datFilePath);
+
+    /**
+     * @brief 【仮想関数】デストラクタ
+     */
+    virtual ~Map() = default;
 
     /**
      * @brief マップの描画処理
@@ -50,11 +58,9 @@ private:
 
     /**
      * @brief 通行設定（１マスごとに指定される通行設定）
-     * @details 通行設定は4ビットで表現する。
-     * @details 1ビット目から上、右、下、左の通行設定で、0：通行可、1：通行不可。
-     * @details 例）0000：全方向通行可、1100：上と右のみ通行可、1111：全方向通行不可
+     * @details 通行設定は列挙帯MapCollideIDによって表現される
      */
-    std::vector<unsigned int> m_passData;
+    std::vector<MapCollideID> m_passData;
 
     /**
      * @brief マップデータの読込処理

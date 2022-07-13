@@ -1,4 +1,5 @@
 #include "RectCollider.h"
+#include "GameManager.h"
 
 template <class T>
 bool RectCollider<T>::isCollide(std::shared_ptr<RectCollider> target) {
@@ -11,7 +12,6 @@ bool RectCollider<T>::isCollide(std::shared_ptr<RectCollider> target) {
 
 template <class T>
 bool RectCollider<T>::isCollide() {
-    //・TODO：マップ地形との衝突判定（マップはどこから参照する？）
     if (false) {
         return true;
     }

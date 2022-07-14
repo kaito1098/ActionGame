@@ -79,12 +79,6 @@ protected:
     std::unique_ptr<AnimationManager> m_animationManagerPtr;
 
     /**
-     * @brief 落下しているかどうか（着地しているかどうか）
-     * @return true：落下している、false：落下していない
-     */
-    bool checkFalling();
-
-    /**
      * @brief 【仮想関数】update()が呼ばれる前のセットアップ（キー入力やAI操作による移動速度の決定など）
      */
     virtual void setup() = 0;

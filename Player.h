@@ -1,5 +1,6 @@
 #pragma once
 #include "BaseActor.h"
+#include "RectCollider.h"
 
 /** @brief プレイヤーキャラクター */
 class Player : public BaseActor {
@@ -19,6 +20,9 @@ public:
 	ColliderID getColliderHolderID();
 
 protected:
+	/** @brief 当たり判定 */
+	std::unique_ptr<RectCollider> collider;
+
 	/**
 	 * @brief キー入力による操作の実装
 	 * @remark 十字キーで移動 TODO：2回押すとローリング

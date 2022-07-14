@@ -11,15 +11,15 @@ protected:
      * @param (dx) 当たり判定を保持するオブジェクトからの相対座標（x軸方向）
      * @param (dy) 当たり判定を保持するオブジェクトからの相対座標（y軸方向）
      */
-    BaseCollider(std::shared_ptr<IColliderHolder> holderPtr, int dx, int dy);
+    BaseCollider(IColliderHolder* holderPtr, int dx, int dy);
 
     /**
      * @brief 【仮想関数】デストラクタ
      */
     virtual ~BaseCollider() = default;
 
-    /** @brief Collider を保持する Actor クラスを指すポインタ */
-    std::shared_ptr<IColliderHolder> m_holderPtr;
+    /** @brief 当たり判定を保持するオブジェクトを指すポインタ */
+    IColliderHolder* m_holderPtr;
 
     /** @brief 当たり判定を保持するオブジェクトからの相対座標（x軸方向） */
     int m_dx;
@@ -33,4 +33,10 @@ protected:
      * @return 戻り値の説明
      */
     virtual bool isCollide() = 0;
+
+    /**
+     * @【仮想関数】brief 落下しているかどうか（着地しているかどうか）
+     * @return true：落下している、false：落下していない
+     */
+    virtual bool checkFalling() = 0;
 };

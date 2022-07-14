@@ -19,6 +19,7 @@ public:
 	ColliderID getColliderHolderID();
 
 protected:
+
 	/**
 	 * @brief AI‚É‚æ‚é‹““®‚ÌÀ‘•
 	 * @remark •½í‚Íˆê’èŠÔŠu‚Å¶‰E‚Éœpœj‚·‚é‚Ì‚İB

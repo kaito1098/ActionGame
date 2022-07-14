@@ -24,8 +24,3 @@ int BaseActor::getX() {
 int BaseActor::getY() {
 	return m_y;
 }
-
-bool BaseActor::checkFalling() {
-	//TODOFÀÛ‚É‚Í‚Ç‚¤”»’è‚·‚×‚«‚©H
-	return m_y < (GROUND_HEIGHT);
-}

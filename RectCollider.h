@@ -4,18 +4,31 @@
 /** @brief 矩形の当たり判定クラス */
 class RectCollider : public BaseCollider {
 public:
+    /**
+     * @brief コンストラクタ
+     * @param (IColliderHolderPtr) 当たり判定を保持するオブジェクトを指すポインタ
+     * @return 戻り値の説明
+     */
+    RectCollider(IColliderHolder* holderPtr, int dx, int dy, int width, int height);
+
     /** @brief 矩形同士の衝突判定 */
     bool isCollide(std::shared_ptr<RectCollider> target);
     
     /** @brief マップ地形との衝突判定 */
     bool isCollide() override;
 
+    /**
+     * @brief 落下しているかどうか（着地しているかどうか）
+     * @return true：落下している、false：落下していない
+     */
+    bool checkFalling() override;
+
 private:
     /** @brief 矩形の横幅 */
-    int width;
+    int m_width;
 
     /** @brief 矩形の縦幅 */
-    int height;
+    int m_height;
 
     /** @brief 上辺のy座標 */
     int top();

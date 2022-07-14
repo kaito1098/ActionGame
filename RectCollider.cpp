@@ -1,8 +1,6 @@
 #include "RectCollider.h"
-#include "GameManager.h"
 
-template <class T>
-bool RectCollider<T>::isCollide(std::shared_ptr<RectCollider> target) {
+bool RectCollider::isCollide(std::shared_ptr<RectCollider> target) {
     if (target->top() >= bottom() && target->bottom() <= top() &&
         target->left() >= right() && target->right() <= left()) {
         return true;
@@ -10,30 +8,25 @@ bool RectCollider<T>::isCollide(std::shared_ptr<RectCollider> target) {
     return false;
 }
 
-template <class T>
-bool RectCollider<T>::isCollide() {
+bool RectCollider::isCollide() {
     if (false) {
         return true;
     }
     return false;
 }
 
-template <class T>
-int RectCollider<T>::top() {
-    return this->m_holderPtr->y() + this->m_dy;
+int RectCollider::top() {
+    return this->m_holderPtr->getY() + this->m_dy;
 }
 
-template <class T>
-int RectCollider<T>::bottom() {
+int RectCollider::bottom() {
     return top() + this->height;
 }
 
-template <class T>
-int RectCollider<T>::left() {
-    return this->m_holderPtr->x() + this->m_dx;
+int RectCollider::left() {
+    return this->m_holderPtr->getX() + this->m_dx;
 }
 
-template <class T>
-int RectCollider<T>::right() {
+int RectCollider::right() {
     return left() + this->width;
 }

@@ -28,3 +28,5 @@ void GameManager::draw() {
 	playerPtr->draw();
 	mushroomPtr->draw();
 }
+
+std::unique_ptr<GameManager> gameManagerPtr = std::make_unique<GameManager>();

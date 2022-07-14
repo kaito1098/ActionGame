@@ -40,3 +40,6 @@ private:
 	/** @brief 敵キャラクターを管理するマネージャを指すポインタ */
 	std::unique_ptr<EnemyMushroom> mushroomPtr;
 };
+
+/** @brief ゲームマネージャ */
+extern std::unique_ptr<GameManager> gameManagerPtr;

@@ -1,10 +1,11 @@
 #pragma once
+#include "IColliderHolder.h"
 #include "AnimationManager.h"
 #include <vector>
 #include <memory>
 
 /** @brief アニメーションとコリジョンを保持するキャラクターの基底クラス */
-class BaseActor {
+class BaseActor : public IColliderHolder {
 public:
     /**
      * @brief コンストラクタ
@@ -30,6 +31,24 @@ public:
      * @brief 現在の状態に基づいた描画処理
      */
     void draw();
+
+    /**
+     * @brief 【仮想関数】ColliderHolderID のゲッター
+     * @return ColliderHolderID
+     */
+    virtual ColliderID getColliderHolderID() = 0;
+
+    /**
+     * @brief 描画座標（x軸）のゲッター
+     * @return 描画座標（x軸）
+     */
+    int getX() override;
+
+    /**
+     * @brief 描画座標（y軸）のゲッター
+     * @return 描画座標（y軸）
+     */
+    int getY() override;
 
 protected:
     /** @brief 描画座標（x軸） */

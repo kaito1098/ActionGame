@@ -1,9 +1,8 @@
 #pragma once
 #include <memory>
-#include "BaseActor.h"
+#include "IColliderHolder.h"
 
 /** @brief 当たり判定の基底クラス */
-template <class T>
 class BaseCollider {
 protected:
     /**
@@ -12,7 +11,7 @@ protected:
      * @param (dx) 当たり判定を保持するオブジェクトからの相対座標（x軸方向）
      * @param (dy) 当たり判定を保持するオブジェクトからの相対座標（y軸方向）
      */
-    BaseCollider(std::shared_ptr<T> holderPtr, int dx, int dy);
+    BaseCollider(std::shared_ptr<IColliderHolder> holderPtr, int dx, int dy);
 
     /**
      * @brief 【仮想関数】デストラクタ
@@ -20,7 +19,7 @@ protected:
     virtual ~BaseCollider() = default;
 
     /** @brief Collider を保持する Actor クラスを指すポインタ */
-    std::shared_ptr<T> m_holderPtr;
+    std::shared_ptr<IColliderHolder> m_holderPtr;
 
     /** @brief 当たり判定を保持するオブジェクトからの相対座標（x軸方向） */
     int m_dx;

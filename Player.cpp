@@ -16,6 +16,10 @@ Player::Player(int _x, int _y) :
 	m_animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Hero/Dash.png", 4, 4, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 4, false, 2));	//・４
 }
 
+ColliderID Player::getColliderHolderID() {
+	return ColliderID::Player;
+}
+
 void Player::setup() {
 	if (checkFalling()) {
 		//・落下速度計算

@@ -12,6 +12,12 @@ public:
 	 */
 	Player(int x, int y);
 
+	/**
+	 * @brief ColliderHolderID のゲッター
+	 * @return ColliderHolderID
+	 */
+	ColliderID getColliderHolderID();
+
 protected:
 	/**
 	 * @brief キー入力による操作の実装

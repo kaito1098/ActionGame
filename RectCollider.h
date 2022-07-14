@@ -2,8 +2,7 @@
 #include "BaseCollider.h"
 
 /** @brief 矩形の当たり判定クラス */
-template <class T>
-class RectCollider : public BaseCollider<T> {
+class RectCollider : public BaseCollider {
 public:
     /** @brief 矩形同士の衝突判定 */
     bool isCollide(std::shared_ptr<RectCollider> target);

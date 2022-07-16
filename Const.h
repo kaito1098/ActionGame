@@ -1,11 +1,17 @@
 #pragma once
 #include <memory>
 
+/** @brief デバッグフラグ（当たり判定の可視化など） */
+extern const bool DEBUG_FLAG;
+
 /** @brief 画面解像度（x軸方向） */
 extern const int SCREEN_WIDTH;
 
 /** @brief 画面解像度（y軸方向） */
 extern const int SCREEN_HEIGHT;
+
+/** @brief 重力による毎フレームの加速度 */
+extern const int GRAVITY;
 
 /** @brief 最大落下速度 */
 extern const int MAX_FALL_SPEED;

@@ -22,16 +22,20 @@ public:
     virtual ~ICollider() = default;
 
     /**
+     * @brief 【仮想関数】当たり判定の描画（デバッグ用）
+     */
+    virtual void draw() = 0;
+
+    /**
      * @brief 【仮想関数】矩形コライダーとの当たり判定
-     * @param (arg)
-     * @return 戻り値の説明
+     * @param (target) 相手の矩形コライダー
+     * @return true：衝突している、false：衝突していない
      */
     virtual bool isCollide(std::shared_ptr<RectCollider> target) = 0;
 
     /**
      * @brief 【仮想関数】マップ地形との当たり判定
-     * @param (arg)
-     * @return 戻り値の説明
+     * @return true：衝突している、false：衝突していない
      */
     virtual bool isCollide() = 0;
 

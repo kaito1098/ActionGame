@@ -7,14 +7,25 @@ public:
     /**
      * @brief コンストラクタ
      * @param (IColliderHolderPtr) 当たり判定を保持するオブジェクトを指すポインタ
-     * @return 戻り値の説明
      */
     RectCollider(IColliderHolder* holderPtr, int dx, int dy, int width, int height);
 
-    /** @brief 矩形同士の衝突判定 */
+    /**
+     * @brief 当たり判定の描画（デバッグ用）
+     */
+    void draw() override;
+
+    /**
+     * @brief 矩形コライダーとの当たり判定
+     * @param (target) 相手の矩形コライダー
+     * @return true：衝突している、false：衝突していない
+     */
     bool isCollide(std::shared_ptr<RectCollider> target) override;
     
-    /** @brief マップ地形との衝突判定 */
+    /**
+     * @brief マップ地形との当たり判定
+     * @return true：衝突している、false：衝突していない
+     */
     bool isCollide() override;
 
     /**

@@ -17,7 +17,7 @@ std::shared_ptr<Map> GameManager::getMapPtr() {
 
 void GameManager::init() {
 	mapPtr = std::make_shared<Map>("Data/Tileset/mapA.dat");
-	playerPtr = std::make_unique<Player>(100, GROUND_HEIGHT);
+	playerPtr = std::make_unique<Player>(100, 200);
 	mushroomPtr = std::make_unique<EnemyMushroom>(500, GROUND_HEIGHT);
 	//・音楽を鳴らす（TODO：音楽はシーンマネージャとかで管理？）
 	int sound = LoadSoundMem("Data/Test/Forest.wav");

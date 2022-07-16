@@ -1,8 +1,8 @@
 #pragma once
-#include "BaseCollider.h"
+#include "ICollider.h"
 
 /** @brief 矩形の当たり判定クラス */
-class RectCollider : public BaseCollider {
+class RectCollider : public ICollider {
 public:
     /**
      * @brief コンストラクタ
@@ -12,7 +12,7 @@ public:
     RectCollider(IColliderHolder* holderPtr, int dx, int dy, int width, int height);
 
     /** @brief 矩形同士の衝突判定 */
-    bool isCollide(std::shared_ptr<RectCollider> target);
+    bool isCollide(std::shared_ptr<RectCollider> target) override;
     
     /** @brief マップ地形との衝突判定 */
     bool isCollide() override;
@@ -21,7 +21,7 @@ public:
      * @brief 落下しているかどうか（着地しているかどうか）
      * @return true：落下している、false：落下していない
      */
-    bool checkFalling() override;
+    bool isFalling() override;
 
 private:
     /** @brief 矩形の横幅 */

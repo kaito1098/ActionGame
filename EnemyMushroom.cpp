@@ -1,4 +1,3 @@
-#include "EnemyMushroom.h"
 #include "Common.h"
 
 const int SPRITES_X_SIZE = 450;
@@ -9,7 +8,7 @@ int frameCnt = 0;
 int step = 0;
 
 EnemyMushroom::EnemyMushroom(int _x, int _y) :
-	BaseActor(_x, _y, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE) {
+	IActor(_x, _y, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE) {
 	//・TODO：同じキャラクターが複数存在したら、アニメーションのスプライト画像は同じものを使いまわしたい。
 	//・使用するアニメーション一式の準備（一番目に指定したアニメーションが待機アニメーションとなる）
 	m_animationManagerPtr = std::make_unique<AnimationManager>();

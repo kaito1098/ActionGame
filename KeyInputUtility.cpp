@@ -1,4 +1,4 @@
-#include "KeyInputUtility.h"
+#include "Common.h"
 #include "DxLib.h"
 
 KeyInputUtility::KeyInputUtility(int _keyCode) :

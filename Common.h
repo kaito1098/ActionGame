@@ -1,34 +1,23 @@
 #pragma once
-#include <memory>
+/**
+ * すべての実装ファイル（cpp）から参照される想定の宣言ファイル。
+ * 実体化可能なクラスの宣言をすべて持つ。
+ * （インターフェースは実装クラスが内部構造を知る必要があるため、個別に参照する）
+ */
 
-//・事前宣言
-class GameManager;
+#include "Const.h"
 
-/** @brief 画面解像度（x軸方向） */
-extern const int SCREEN_WIDTH;
+#include "GameManager.h"
+#include "AnimationManager.h"
 
-/** @brief 画面解像度（y軸方向） */
-extern const int SCREEN_HEIGHT;
+#include "Player.h"
+#include "EnemyMushroom.h"
 
-/** @brief 最大落下速度 */
-extern const int MAX_FALL_SPEED;
+#include "Animation.h"
 
-//・TODO：テスト用なのであとで消す
-/** @brief 地面の高さ */
-extern const int GROUND_HEIGHT;
+#include "RectCollider.h"
 
-/** @brief マップ当たり判定種別（列挙帯） */
-enum class MapCollideID {
-    passable = 0,
-    impassable = 1,
-    jumpPassable = 2,
-    squatPassable = 3,
-    rightStair = 4,
-    leftStair = 5,
-};
+#include "Map.h"
 
-/** @brief 当たり判定種別（列挙帯） */
-enum class ColliderID {
-    Player = 0,
-    Enemy = 1,
-};
+#include "KeyInputUtility.h"
+#include "KeyInput.h"

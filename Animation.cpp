@@ -1,4 +1,4 @@
-#include "Animation.h"
+#include "Common.h"
 #include "DxLib.h"
 
 Animation::Animation(std::string _filePath, int _allNum, int _xNum, int _yNum, int _xSize, int _ySize, int _animFrameCnt, bool _enabledLoop, int _busyLevel) :

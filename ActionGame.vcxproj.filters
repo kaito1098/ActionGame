@@ -51,10 +51,10 @@
     <ClCompile Include="GameManager.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Common.cpp">
+    <ClCompile Include="Const.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="BaseActor.cpp">
+    <ClCompile Include="IActor.cpp">
       <Filter>ソース ファイル\Actor</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
@@ -72,7 +72,7 @@
     <ClCompile Include="Map.cpp">
       <Filter>ソース ファイル\Map</Filter>
     </ClCompile>
-    <ClCompile Include="BaseCollider.cpp">
+    <ClCompile Include="ICollider.cpp">
       <Filter>ソース ファイル\Collision</Filter>
     </ClCompile>
     <ClCompile Include="RectCollider.cpp">
@@ -84,15 +84,18 @@
     <ClCompile Include="IColliderHolder.cpp">
       <Filter>ソース ファイル\Component</Filter>
     </ClCompile>
+    <ClCompile Include="KeyInput.cpp">
+      <Filter>ソース ファイル\Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Common.h">
+    <ClInclude Include="Const.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="BaseActor.h">
+    <ClInclude Include="IActor.h">
       <Filter>ヘッダー ファイル\Actor</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
@@ -116,7 +119,7 @@
     <ClInclude Include="Map.h">
       <Filter>ヘッダー ファイル\Map</Filter>
     </ClInclude>
-    <ClInclude Include="BaseCollider.h">
+    <ClInclude Include="ICollider.h">
       <Filter>ヘッダー ファイル\Collision</Filter>
     </ClInclude>
     <ClInclude Include="RectCollider.h">
@@ -124,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="IColliderHolder.h">
       <Filter>ヘッダー ファイル\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

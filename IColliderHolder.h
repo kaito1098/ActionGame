@@ -1,5 +1,4 @@
 #pragma once
-#include "Common.h"
 
 /** @brief コライダーを保持するオブジェクト用インターフェース */
 class IColliderHolder {
@@ -21,4 +20,16 @@ public:
      * @return 描画座標（y軸）
      */
     virtual int getY() = 0;
+
+    /**
+     * @brief 【仮想関数】描画座標（x軸）のセッター
+     * @return 描画座標（x軸）
+     */
+    virtual void setX(int x) = 0;
+
+    /**
+     * @brief 【仮想関数】描画座標（y軸）のセッター
+     * @return 描画座標（y軸）
+     */
+    virtual void setY(int y) = 0;
 };

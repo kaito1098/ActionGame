@@ -1,13 +1,15 @@
 #pragma once
 #include "KeyInputUtility.h"
 #include "DxLib.h"
+#include <memory>
 
+/** @brief 各種キー入力を受け付けるオブジェクト */
 namespace KeyInput {
-	KeyInputUtility DOWN(KEY_INPUT_DOWN);
-	KeyInputUtility UP(KEY_INPUT_UP);
-	KeyInputUtility RIGHT(KEY_INPUT_RIGHT);
-	KeyInputUtility LEFT(KEY_INPUT_LEFT);
-	KeyInputUtility Z(KEY_INPUT_Z);
-	KeyInputUtility X(KEY_INPUT_X);
-	KeyInputUtility LSHIFT(KEY_INPUT_LSHIFT);
+	extern std::unique_ptr<KeyInputUtility> DOWN;
+	extern std::unique_ptr<KeyInputUtility> UP;
+	extern std::unique_ptr<KeyInputUtility> RIGHT;
+	extern std::unique_ptr<KeyInputUtility> LEFT;
+	extern std::unique_ptr<KeyInputUtility> Z;
+	extern std::unique_ptr<KeyInputUtility> X;
+	extern std::unique_ptr<KeyInputUtility> LSHIFT;
 }

@@ -1,12 +1,10 @@
-#include "Player.h"
 #include "Common.h"
-#include "KeyInput.h"
 
 const int SPRITES_X_SIZE = 420;
 const int SPRITES_Y_SIZE = 420;
 
 Player::Player(int _x, int _y) :
-	BaseActor(_x, _y, 2, SPRITES_X_SIZE, SPRITES_Y_SIZE) {
+	IActor(_x, _y, 2, SPRITES_X_SIZE, SPRITES_Y_SIZE) {
 	//・当たり判定
 	collider = std::make_unique<RectCollider>(this, 20, 40, 100, 200);
 	//・使用するアニメーション一式の準備（一番目に指定したアニメーションが待機アニメーションとなる）
@@ -23,7 +21,7 @@ ColliderID Player::getColliderHolderID() {
 }
 
 void Player::setup() {
-	if (collider->checkFalling()) {
+	if (collider->isFalling()) {
 		//・落下速度計算
 		if (m_ySpeed < MAX_FALL_SPEED) m_ySpeed++;
 	} else {
@@ -32,32 +30,32 @@ void Player::setup() {
 		m_ySpeed = 0;
 		m_xSpeed = 0;
 		//・アイドル状態
-		if (!KeyInput::RIGHT.onPressed() && !KeyInput::LEFT.onPressed()) {
+		if (!KeyInput::RIGHT->onPressed() && !KeyInput::LEFT->onPressed()) {
 			if (m_animationManagerPtr->change(0)) {
 				m_xSpeed = 0;
 			}
 		}
 		//・左右移動
-		if (KeyInput::RIGHT.onPressed()) {
+		if (KeyInput::RIGHT->onPressed()) {
 			if (m_animationManagerPtr->change(1)) {
 				m_turn = false;
 				m_xSpeed = m_baseSpeed;
 			}
 		}
-		if (KeyInput::LEFT.onPressed()) {
+		if (KeyInput::LEFT->onPressed()) {
 			if (m_animationManagerPtr->change(1)) {
 				m_turn = true;
 				m_xSpeed = -m_baseSpeed;
 			}
 		}
 		//・ジャンプ
-		if (KeyInput::Z.onPressedOnce()) {
+		if (KeyInput::Z->onPressedOnce()) {
 			if (m_animationManagerPtr->change(2)) {
 				m_ySpeed = -12;
 			}
 		}
 		//・バックステップ
-		if (KeyInput::LSHIFT.onPressedOnce()) {
+		if (KeyInput::LSHIFT->onPressedOnce()) {
 			if (m_animationManagerPtr->change(4)) {
 				m_xSpeed = (m_turn ? m_baseSpeed : -m_baseSpeed) * 5;
 				m_ySpeed = -5;
@@ -65,9 +63,9 @@ void Player::setup() {
 		}
 	}
 	//・攻撃
-	if (KeyInput::X.onPressedOnce()) {
+	if (KeyInput::X->onPressedOnce()) {
 		if (m_animationManagerPtr->change(3)) {
-			if (!collider->checkFalling()) {
+			if (!collider->isFalling()) {
 				//・地上で攻撃した場合は即座に移動停止
 				m_xSpeed = 0;
 			}

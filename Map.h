@@ -1,9 +1,6 @@
 #pragma once
-#include "Common.h"
 #include <vector>
 #include <string>
-
-enum class MapCollideID;
 
 /** @brief マップの基底クラス */
 class Map {
@@ -24,6 +21,14 @@ public:
      * @brief マップの描画処理
      */
     void draw();
+
+    /**
+     * @brief 指定座標の MapCollideID を取得する
+     * @param (x) x座標
+     * @param (y) y座標
+     * @return マップ当たり判定種別
+     */
+    MapCollideID getMapCollideID(int x, int y);
 
 private:
     /** @brief datファイルパス */
@@ -47,10 +52,10 @@ private:
     /** @brief タイル分割数（y軸方向） */
     int m_tileNumY;
 
-    /** @brief マップサイズ（x軸方向） */
+    /** @brief マップサイズ（x軸方向、単位：タイル数） */
     int m_mapSizeX;
 
-    /** @brief マップサイズ（y軸方向） */
+    /** @brief マップサイズ（y軸方向、単位：タイル数） */
     int m_mapSizeY;
 
     /** @brief マップデータ（１マスごとに指定されるタイルIDのリスト） */

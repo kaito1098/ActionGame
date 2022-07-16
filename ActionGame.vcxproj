@@ -153,12 +153,13 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationManager.cpp" />
-    <ClCompile Include="BaseActor.cpp" />
-    <ClCompile Include="BaseCollider.cpp" />
+    <ClCompile Include="IActor.cpp" />
+    <ClCompile Include="ICollider.cpp" />
     <ClCompile Include="IColliderHolder.cpp" />
+    <ClCompile Include="KeyInput.cpp" />
     <ClCompile Include="KeyInputUtility.cpp" />
     <ClCompile Include="Map.cpp" />
-    <ClCompile Include="Common.cpp" />
+    <ClCompile Include="Const.cpp" />
     <ClCompile Include="EnemyMushroom.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -168,11 +169,12 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationManager.h" />
-    <ClInclude Include="BaseActor.h" />
-    <ClInclude Include="BaseCollider.h" />
+    <ClInclude Include="IActor.h" />
+    <ClInclude Include="ICollider.h" />
+    <ClInclude Include="Common.h" />
     <ClInclude Include="IColliderHolder.h" />
     <ClInclude Include="Map.h" />
-    <ClInclude Include="Common.h" />
+    <ClInclude Include="Const.h" />
     <ClInclude Include="EnemyMushroom.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="KeyInput.h" />

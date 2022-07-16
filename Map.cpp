@@ -1,5 +1,5 @@
+#include "Common.h"
 #include "DxLib.h"
-#include "Map.h"
 #include <fstream>
 #include <sstream>
 
@@ -16,6 +16,15 @@ void Map::draw() {
             DrawGraph(m_tileSizeX * j, m_tileSizeY * i, m_tilesetHandle[m_mapData[j + i * m_mapSizeX]], TRUE);
         }
     }
+}
+
+MapCollideID Map::getMapCollideID(int x, int y) {
+    int numX = x / m_tileSizeX;
+    int numY = y / m_tileSizeY;
+    if (numX < m_mapSizeX && numY < m_mapSizeY) {
+        return m_passData[numX + numY * m_mapSizeX];
+    }
+    return MapCollideID::impassable;    //・マップ範囲外は通行不可
 }
 
 void Map::loadMapData() {

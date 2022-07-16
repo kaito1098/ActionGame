@@ -1,7 +1,7 @@
-#include "RectCollider.h"
+#include "Common.h"
 
 RectCollider::RectCollider(IColliderHolder* holderPtr, int dx, int dy, int width, int height) :
-    BaseCollider(holderPtr, dx, dy),
+    ICollider(holderPtr, dx, dy),
     m_width(width), m_height(height) {
 }
 
@@ -20,9 +20,9 @@ bool RectCollider::isCollide() {
     return false;
 }
 
-bool RectCollider::checkFalling() {
-    //TODOÅFé¿ç€Ç…ÇÕÇ«Ç§îªíËÇ∑Ç◊Ç´Ç©ÅH
-    return true;
+bool RectCollider::isFalling() {
+    std::shared_ptr<Map> mapPtr = gameManagerPtr->getMapPtr();
+    return mapPtr->getMapCollideID(m_holderPtr->getX(), m_holderPtr->getY()) == MapCollideID::passable;
 }
 
 int RectCollider::top() {

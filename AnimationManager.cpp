@@ -1,4 +1,4 @@
-#include "AnimationManager.h"
+#include "Common.h"
 #include "DxLib.h"
 
 AnimationManager::AnimationManager() :

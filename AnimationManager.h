@@ -1,7 +1,8 @@
 #pragma once
-#include "Animation.h"
 #include <vector>
 #include <memory>
+
+class Animation;
 
 /** @brief 複数の Animation クラスを管理するマネージャクラス */
 class AnimationManager {

@@ -1,11 +1,14 @@
 #pragma once
 #include "IColliderHolder.h"
-#include "AnimationManager.h"
 #include <vector>
 #include <memory>
 
-/** @brief アニメーションとコリジョンを保持するキャラクターの基底クラス */
-class BaseActor : public IColliderHolder {
+class IColliderHolder;
+class AnimationManager;
+class ICollider;
+
+/** @brief アニメーションとコライダーを保持するキャラクターの基底クラス */
+class IActor : public IColliderHolder {
 public:
     /**
      * @brief コンストラクタ
@@ -15,12 +18,12 @@ public:
      * @param _xSize：画像の横幅
      * @param _ySize：画像の縦幅
      */
-    BaseActor(int x, int y, int speed, int xSize, int ySize);
+    IActor(int x, int y, int speed, int xSize, int ySize);
 
     /**
      * @brief 【仮想関数】デストラクタ
      */
-    virtual ~BaseActor() = default;
+    virtual ~IActor() = default;
 
     /**
      * @brief 位置情報、アニメーションなどの更新処理
@@ -50,6 +53,18 @@ public:
      */
     int getY() override;
 
+    /**
+     * @brief 描画座標（x軸）のセッター
+     * @return 描画座標（x軸）
+     */
+    void setX(int x) override;
+
+    /**
+     * @brief 描画座標（y軸）のセッター
+     * @return 描画座標（y軸）
+     */
+    void setY(int y) override;
+
 protected:
     /** @brief 描画座標（x軸） */
     int m_x;
@@ -77,6 +92,9 @@ protected:
 
     /** @brief アニメーションマネージャへのポインタ */
     std::unique_ptr<AnimationManager> m_animationManagerPtr;
+
+    /** @brief 当たり判定 */
+    std::unique_ptr<ICollider> collider;
 
     /**
      * @brief 【仮想関数】update()が呼ばれる前のセットアップ（キー入力やAI操作による移動速度の決定など）

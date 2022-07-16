@@ -1,8 +1,10 @@
 #pragma once
-#include "BaseActor.h"
+#include "IActor.h"
+
+class IActor;
 
 /** @brief マッシュルームモンスター */
-class EnemyMushroom : public BaseActor {
+class EnemyMushroom : public IActor {
 public:
 	/**
 	 * @brief コンストラクタ
@@ -19,7 +21,6 @@ public:
 	ColliderID getColliderHolderID();
 
 protected:
-
 	/**
 	 * @brief AIによる挙動の実装
 	 * @remark 平常時は一定間隔で左右に徘徊するのみ。

@@ -1,10 +1,9 @@
 #pragma once
-#include "Map.h"
-#include "Player.h"
-#include "EnemyMushroom.h"
 #include <memory>
 
 class Map;
+class Player;
+class EnemyMushroom;
 
 /** @brief ゲーム全体を管理するマネージャクラス */
 class GameManager {
@@ -13,6 +12,12 @@ public:
 	 * @brief ゲームのメイン処理
 	 */
 	void main();
+
+	/**
+	 * @brief 現在のマップを指すポインタを取得
+	 * @return 現在のマップを指すポインタ
+	 */
+	std::shared_ptr<Map> getMapPtr();
 
 private:
 	/**
@@ -31,7 +36,7 @@ private:
 	void draw();
 
 	/** @brief 現在のマップを指すポインタ */
-	std::unique_ptr<Map> mapPtr;
+	std::shared_ptr<Map> mapPtr;
 
 	/** @brief プレイヤーキャラクターを指すポインタ */
 	std::unique_ptr<Player> playerPtr;

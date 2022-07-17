@@ -18,13 +18,13 @@ void Map::draw() {
     }
 }
 
-MapCollideID Map::getMapCollideID(int x, int y) {
+bool Map::checkPassable(int x, int y) {
     int numX = x / m_tileSizeX;
     int numY = y / m_tileSizeY;
     if (numX < m_mapSizeX && numY < m_mapSizeY) {
-        return m_passData[numX + numY * m_mapSizeX];
+        return m_passData[numX + numY * m_mapSizeX] == MapCollideID::passable;
     }
-    return MapCollideID::impassable;    //・マップ範囲外は通行不可
+    return false;   //・マップ範囲外は通行不可
 }
 
 void Map::loadMapData() {

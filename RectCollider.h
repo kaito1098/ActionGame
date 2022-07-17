@@ -21,15 +21,15 @@ public:
      * @return true：衝突している、false：衝突していない
      */
     bool isCollide(std::shared_ptr<RectCollider> target) override;
-    
+
     /**
      * @brief マップ地形との当たり判定
      * @return true：衝突している、false：衝突していない
      */
-    bool isCollide() override;
+    bool isMapCollide() override;
 
     /**
-     * @brief 落下しているかどうか（着地しているかどうか）
+     * @【仮想関数】brief 落下中かどうか
      * @return true：落下している、false：落下していない
      */
     bool isFalling() override;
@@ -40,6 +40,30 @@ private:
 
     /** @brief 矩形の縦幅 */
     int m_height;
+
+    /**
+     * @brief 天井との当たり判定
+     * @return true：衝突している、false：衝突していない
+     */
+    bool isMapCollideCeiling(std::shared_ptr<Map> mapPtr);
+
+    /**
+     * @brief 壁との当たり判定（右方向）
+     * @return true：衝突している、false：衝突していない
+     */
+    bool isMapCollideRight(std::shared_ptr<Map> mapPtr);
+
+    /**
+     * @brief 壁との当たり判定（左方向）
+     * @return true：衝突している、false：衝突していない
+     */
+    bool isMapCollideLeft(std::shared_ptr<Map> mapPtr);
+
+    /**
+     * @brief 床との当たり判定
+     * @return true：落下している、false：落下していない
+     */
+    bool isMapCollideFloor(std::shared_ptr<Map> mapPtr);
 
     /** @brief 上辺のy座標 */
     int top();

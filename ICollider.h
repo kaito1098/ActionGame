@@ -34,13 +34,13 @@ public:
     virtual bool isCollide(std::shared_ptr<RectCollider> target) = 0;
 
     /**
-     * @brief 【仮想関数】マップ地形との当たり判定
+     * @brief 【仮想関数】天井との当たり判定
      * @return true：衝突している、false：衝突していない
      */
-    virtual bool isCollide() = 0;
+    virtual bool isMapCollide() = 0;
 
     /**
-     * @【仮想関数】brief 落下しているかどうか（着地しているかどうか）
+     * @【仮想関数】brief 落下中かどうか
      * @return true：落下している、false：落下していない
      */
     virtual bool isFalling() = 0;

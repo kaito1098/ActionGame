@@ -28,7 +28,7 @@ public:
      * @param (y) y座標
      * @return マップ当たり判定種別
      */
-    MapCollideID getMapCollideID(int x, int y);
+    bool checkPassable(int x, int y);
 
 private:
     /** @brief datファイルパス */

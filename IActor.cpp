@@ -9,7 +9,10 @@ void IActor::update() {
 	m_x += m_xSpeed;
 	m_y += m_ySpeed;
 	m_animationManagerPtr->update();
-	if (collider) collider->draw();
+	if (collider) {
+		collider->isMapCollide();
+		collider->draw();
+	}
 }
 
 void IActor::draw() {

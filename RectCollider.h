@@ -26,7 +26,7 @@ public:
      * @brief マップ地形との当たり判定
      * @return true：衝突している、false：衝突していない
      */
-    bool isMapCollide() override;
+    std::array<int, 2> checkMapCollide() override;
 
     /**
      * @【仮想関数】brief 落下中かどうか
@@ -42,28 +42,28 @@ private:
     int m_height;
 
     /**
-     * @brief 天井との当たり判定
-     * @return true：衝突している、false：衝突していない
+     * @brief 床との当たり判定
+     * @return true：落下している、false：落下していない
      */
-    bool isMapCollideCeiling(std::shared_ptr<Map> mapPtr);
+    bool checkMapCollideFloor(std::shared_ptr<Map> mapPtr, int& x, int& y);
 
     /**
      * @brief 壁との当たり判定（右方向）
      * @return true：衝突している、false：衝突していない
      */
-    bool isMapCollideRight(std::shared_ptr<Map> mapPtr);
+    bool checkMapCollideRight(std::shared_ptr<Map> mapPtr, int& x, int& y);
+
+    /**
+     * @brief 天井との当たり判定
+     * @return true：衝突している、false：衝突していない
+     */
+    bool checkMapCollideCeiling(std::shared_ptr<Map> mapPtr, int& x, int& y);
 
     /**
      * @brief 壁との当たり判定（左方向）
      * @return true：衝突している、false：衝突していない
      */
-    bool isMapCollideLeft(std::shared_ptr<Map> mapPtr);
-
-    /**
-     * @brief 床との当たり判定
-     * @return true：落下している、false：落下していない
-     */
-    bool isMapCollideFloor(std::shared_ptr<Map> mapPtr);
+    bool checkMapCollideLeft(std::shared_ptr<Map> mapPtr, int& x, int& y);
 
     /** @brief 上辺のy座標 */
     int top();

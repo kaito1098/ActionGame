@@ -10,7 +10,7 @@ void IActor::update() {
 	m_y += m_ySpeed;
 	m_animationManagerPtr->update();
 	if (collider) {
-		collider->isMapCollide();
+		setPositionByArray(collider->checkMapCollide());
 		collider->draw();
 	}
 }
@@ -28,10 +28,7 @@ int IActor::getY() {
 	return m_y;
 }
 
-void IActor::setX(int x) {
-	m_x = x;
-}
-
-void IActor::setY(int y) {
-	m_y = y;
+void IActor::setPositionByArray(std::array<int, 2> pos) {
+	m_x = pos[0];
+	m_y = pos[1];
 }

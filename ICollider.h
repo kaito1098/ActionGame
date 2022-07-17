@@ -1,5 +1,6 @@
 #pragma once
 #include <memory>
+#include <array>
 
 class GameManager;
 class IColliderHolder;
@@ -37,7 +38,7 @@ public:
      * @brief 【仮想関数】天井との当たり判定
      * @return true：衝突している、false：衝突していない
      */
-    virtual bool isMapCollide() = 0;
+    virtual std::array<int, 2> checkMapCollide() = 0;
 
     /**
      * @【仮想関数】brief 落下中かどうか

@@ -53,18 +53,6 @@ public:
      */
     int getY() override;
 
-    /**
-     * @brief 描画座標（x軸）のセッター
-     * @return 描画座標（x軸）
-     */
-    void setX(int x) override;
-
-    /**
-     * @brief 描画座標（y軸）のセッター
-     * @return 描画座標（y軸）
-     */
-    void setY(int y) override;
-
 protected:
     /** @brief 描画座標（x軸） */
     int m_x;
@@ -95,6 +83,12 @@ protected:
 
     /** @brief 当たり判定 */
     std::unique_ptr<ICollider> collider;
+
+    /**
+     * @brief アクターの描画位置を array 指定によりセットする
+     * @param (pos) x座標、y座標を要素に持つ array
+     */
+    void setPositionByArray(std::array<int, 2> pos);
 
     /**
      * @brief 【仮想関数】update()が呼ばれる前のセットアップ（キー入力やAI操作による移動速度の決定など）

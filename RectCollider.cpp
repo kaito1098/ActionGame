@@ -23,17 +23,20 @@ bool RectCollider::isCollide(std::shared_ptr<RectCollider> target) {
     return false;
 }
 
-bool RectCollider::isMapCollide() {
+std::array<int, 2> RectCollider::checkMapCollide() {
     std::shared_ptr<Map> mapPtr = gameManagerPtr->getMapPtr();
-    bool collide = false;
-    //・TODO：コライダー側からアクターの位置を書き換えるんでなくて、書き換えるべき位置を返すようにする
-    //collide = isMapCollideCeiling(mapPtr) || collide;
-    //collide = isMapCollideRight(mapPtr) || collide;
-    //collide = isMapCollideLeft(mapPtr) || collide;
-    collide = isMapCollideFloor(mapPtr) || collide;
-    return collide;
+    int x = m_holderPtr->getX();
+    int y = m_holderPtr->getY();
+    //・TODO：同じタイミングで全方位の当たり判定をするのは厳しい？今のところ Floor 判定ばかりが効いて他が機能してない。。
+    //・上下左右の当たり判定を検証し、通行不可領域にめり込まないための描画座標を計算する
+    if (checkMapCollideFloor(mapPtr, x, y)) return std::array<int, 2>{x, y};
+    if (checkMapCollideRight(mapPtr, x, y)) return std::array<int, 2>{x, y};
+    if (checkMapCollideCeiling(mapPtr, x, y)) return std::array<int, 2>{x, y};
+    if (checkMapCollideLeft(mapPtr, x, y)) return std::array<int, 2>{x, y};
+    return std::array<int, 2>{x, y};
 }
 
+//・TODO：頭をぶつける方向にも判定が必要かも（ Actor 側で上方向の速度を 0 にしなきゃいけない）
 bool RectCollider::isFalling() {
     std::shared_ptr<Map> mapPtr = gameManagerPtr->getMapPtr();
     //・コライダー領域の 1 ピクセル下が通行可能か？を判定する
@@ -42,72 +45,68 @@ bool RectCollider::isFalling() {
     return leftCheck && rightCheck;
 }
 
-bool RectCollider::isMapCollideCeiling(std::shared_ptr<Map> mapPtr) {
-    //・コライダー領域の 1 ピクセル上が通行可能か？を判定する
-    bool leftCheck = mapPtr->checkPassable(left(), top() - 1);
-    bool rightCheck = mapPtr->checkPassable(right(), top() - 1);
-    if (leftCheck && rightCheck) {
-        return true;
-    } else {
-        //・通行不可領域にめり込んだ場合、めり込まない位置まで下降させる
-        int over = 0;
-        while (!mapPtr->checkPassable(leftCheck ? right() : left(), top() + over) && top() + over < SCREEN_HEIGHT) {
-            over++;
-        }
-        m_holderPtr->setY(m_holderPtr->getY() + over);
-        return false;
-    }
-}
-
-bool RectCollider::isMapCollideRight(std::shared_ptr<Map> mapPtr) {
-    //・コライダー領域の 1 ピクセル右が通行可能か？を判定する
-    bool topCheck = mapPtr->checkPassable(right() + 1, top());
-    bool bottomCheck = mapPtr->checkPassable(right() + 1, bottom());
-    if (topCheck && bottomCheck) {
-        return true;
-    } else {
-        //・通行不可領域にめり込んだ場合、めり込まない位置まで左に移動させる
-        int over = 0;
-        while (!mapPtr->checkPassable(right() - over, topCheck ? bottom() : top()) && over < right()) {
-            over++;
-        }
-        m_holderPtr->setX(m_holderPtr->getX() - over);
-        return false;
-    }
-}
-
-bool RectCollider::isMapCollideLeft(std::shared_ptr<Map> mapPtr) {
-    //・コライダー領域の 1 ピクセル右が通行可能か？を判定する
-    bool topCheck = mapPtr->checkPassable(left() - 1, top());
-    bool bottomCheck = mapPtr->checkPassable(left() - 1, bottom());
-    if (topCheck && bottomCheck) {
-        return true;
-    } else {
-        //・通行不可領域にめり込んだ場合、めり込まない位置まで右に移動させる
-        int over = 0;
-        while (!mapPtr->checkPassable(left() + over, topCheck ? bottom() : top()) && left() + over < SCREEN_WIDTH) {
-            over++;
-        }
-        m_holderPtr->setX(m_holderPtr->getX() + over);
-        return false;
-    }
-}
-
-bool RectCollider::isMapCollideFloor(std::shared_ptr<Map> mapPtr) {
+bool RectCollider::checkMapCollideFloor(std::shared_ptr<Map> mapPtr, int& x, int& y) {
     //・コライダー領域の 1 ピクセル下が通行可能か？を判定する
     bool leftCheck = mapPtr->checkPassable(left(), bottom() + 1);
     bool rightCheck = mapPtr->checkPassable(right(), bottom() + 1);
-    if (leftCheck && rightCheck) {
-        return true;
-    } else {
+    if (!(leftCheck && rightCheck)) {
         //・通行不可領域にめり込んだ場合、めり込まない位置まで上昇させる
         int over = 0;
         while (!mapPtr->checkPassable(leftCheck ? right() : left(), bottom() - over) && over < bottom()) {
             over++;
         }
-        m_holderPtr->setY(m_holderPtr->getY() - over);
-        return false;
+        y = m_holderPtr->getY() - over;
+        return true;
     }
+    return false;
+}
+
+bool RectCollider::checkMapCollideRight(std::shared_ptr<Map> mapPtr, int& x, int& y) {
+    //・コライダー領域の 1 ピクセル右が通行可能か？を判定する
+    bool topCheck = mapPtr->checkPassable(right() + 1, top());
+    bool bottomCheck = mapPtr->checkPassable(right() + 1, bottom());
+    if (!(topCheck && bottomCheck)) {
+        //・通行不可領域にめり込んだ場合、めり込まない位置まで左に移動させる
+        int over = 0;
+        while (!mapPtr->checkPassable(right() - over, topCheck ? bottom() : top()) && over < right()) {
+            over++;
+        }
+        x = m_holderPtr->getX() - over;
+        return true;
+    }
+    return false;
+}
+
+bool RectCollider::checkMapCollideCeiling(std::shared_ptr<Map> mapPtr, int& x, int& y) {
+    //・コライダー領域の 1 ピクセル上が通行可能か？を判定する
+    bool leftCheck = mapPtr->checkPassable(left(), top() - 1);
+    bool rightCheck = mapPtr->checkPassable(right(), top() - 1);
+    if (!(leftCheck && rightCheck)) {
+        //・通行不可領域にめり込んだ場合、めり込まない位置まで下降させる
+        int over = 0;
+        while (!mapPtr->checkPassable(leftCheck ? right() : left(), top() + over) && top() + over < SCREEN_HEIGHT) {
+            over++;
+        }
+        y = m_holderPtr->getY() + over;
+        return true;
+    }
+    return false;
+}
+
+bool RectCollider::checkMapCollideLeft(std::shared_ptr<Map> mapPtr, int& x, int& y) {
+    //・コライダー領域の 1 ピクセル右が通行可能か？を判定する
+    bool topCheck = mapPtr->checkPassable(left() - 1, top());
+    bool bottomCheck = mapPtr->checkPassable(left() - 1, bottom());
+    if (!(topCheck && bottomCheck)) {
+        //・通行不可領域にめり込んだ場合、めり込まない位置まで右に移動させる
+        int over = 0;
+        while (!mapPtr->checkPassable(left() + over, topCheck ? bottom() : top()) && left() + over < SCREEN_WIDTH) {
+            over++;
+        }
+        x = m_holderPtr->getX() + over;
+        return true;
+    }
+    return false;
 }
 
 int RectCollider::top() {

@@ -14,12 +14,6 @@ public:
 	 */
 	EnemyMushroom(int x, int y);
 
-	/**
-	 * @brief ColliderHolderID ‚ÌƒQƒbƒ^[
-	 * @return ColliderHolderID
-	 */
-	ColliderID getColliderHolderID();
-
 protected:
 	/**
 	 * @brief AI‚É‚æ‚é‹““®‚ÌÀ‘•

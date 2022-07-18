@@ -36,12 +36,6 @@ public:
     void draw();
 
     /**
-     * @brief 【仮想関数】ColliderHolderID のゲッター
-     * @return ColliderHolderID
-     */
-    virtual ColliderID getColliderHolderID() = 0;
-
-    /**
      * @brief 描画座標（x軸）のゲッター
      * @return 描画座標（x軸）
      */

@@ -15,7 +15,7 @@ public:
      * @param (dx) 当たり判定を保持するオブジェクトからの相対座標（x軸方向）
      * @param (dy) 当たり判定を保持するオブジェクトからの相対座標（y軸方向）
      */
-    ICollider(IColliderHolder* holderPtr, int dx, int dy);
+    ICollider(IColliderHolder* holderPtr, ColliderID id, int dx, int dy);
 
     /**
      * @brief 【仮想関数】デストラクタ
@@ -38,18 +38,32 @@ public:
      * @brief 【仮想関数】天井との当たり判定
      * @return true：衝突している、false：衝突していない
      */
-    virtual std::array<int, 2> checkMapCollide() = 0;
+    virtual bool checkPassableOver(int x, int y) = 0;
 
     /**
-     * @【仮想関数】brief 落下中かどうか
+     * @brief 【仮想関数】床との当たり判定
      * @return true：落下している、false：落下していない
      */
-    virtual bool isFalling() = 0;
+    virtual bool checkPassableUnder(int x, int y) = 0;
+
+    /**
+     * @brief 【仮想関数】壁との当たり判定（左方向）
+     * @return true：衝突している、false：衝突していない
+     */
+    virtual bool checkPassableLeft(int x, int y) = 0;
+
+    /**
+     * @brief 【仮想関数】壁との当たり判定（右方向）
+     * @return true：衝突している、false：衝突していない
+     */
+    virtual bool checkPassableRight(int x, int y) = 0;
     
     /** @brief 当たり判定を保持するオブジェクトを指すポインタ */
     IColliderHolder* m_holderPtr;
 
 protected:
+    const ColliderID colliderID;
+
     /** @brief 当たり判定を保持するオブジェクトからの相対座標（x軸方向） */
     int m_dx;
 

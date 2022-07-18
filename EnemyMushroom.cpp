@@ -18,10 +18,6 @@ EnemyMushroom::EnemyMushroom(int _x, int _y) :
 	m_animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Mushroom/Attack2.png", 8, 8, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 6, false, 1));	//ÅEÇR
 }
 
-ColliderID EnemyMushroom::getColliderHolderID() {
-	return ColliderID::Enemy;
-}
-
 void EnemyMushroom::setup() {
 	frameCnt++;
 	if (frameCnt % 120 == 0) {

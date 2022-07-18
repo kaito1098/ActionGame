@@ -9,7 +9,7 @@ const int JUMP_FORCE = 28;	//・ジャンプ力
 Player::Player(int _x, int _y) :
 	IActor(_x, _y, 4, SPRITES_X_SIZE, SPRITES_Y_SIZE) {
 	//・当たり判定
-	collider = std::make_unique<RectCollider>(this, 160, 60, 100, 140);
+	collider = std::make_unique<RectCollider>(this, ColliderID::Player, 160, 60, 100, 140);
 	//・使用するアニメーション一式の準備（一番目に指定したアニメーションが待機アニメーションとなる）
 	m_animationManagerPtr = std::make_unique<AnimationManager>();
 	m_animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Hero/Idle.png", 11, 11, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 6, true));		//・０
@@ -19,12 +19,8 @@ Player::Player(int _x, int _y) :
 	m_animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Hero/Dash.png", 4, 4, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 4, false, 2));		//・４
 }
 
-ColliderID Player::getColliderHolderID() {
-	return ColliderID::Player;
-}
-
 void Player::setup() {
-	if (collider->isFalling()) {
+	if (collider->checkPassableUnder(m_x, m_y)) {
 		//・落下
 		m_animationManagerPtr->change(2);
 		if (m_ySpeed < MAX_FALL_SPEED) m_ySpeed += GRAVITY;
@@ -69,7 +65,7 @@ void Player::setup() {
 	//・攻撃
 	if (KeyInput::X->onPressedOnce()) {
 		if (m_animationManagerPtr->change(3)) {
-			if (!collider->isFalling()) {
+			if (!collider->checkPassableUnder(m_x, m_y)) {
 				//・地上で攻撃した場合は即座に移動停止
 				m_xSpeed = 0;
 			}

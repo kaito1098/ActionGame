@@ -1,7 +1,7 @@
 #include "Common.h"
 
 IActor::IActor(int _x, int _y, int _speed, int _xSize, int _ySize) :
-	m_x(_x), m_y(_y), m_baseSpeed(_speed), m_xSize(_xSize), m_ySize(_ySize), m_xSpeed(0), m_ySpeed(0), m_turn(false) {
+	m_x(_x), m_y(_y), m_baseSpeed(_speed), m_xSize(_xSize), m_ySize(_ySize), m_xSpeed(0), m_ySpeed(0), m_turn(false), m_falling(false) {
 }
 
 void IActor::update() {

@@ -46,6 +46,12 @@ public:
      */
     bool checkPassableRight(int x, int y) override;
 
+    /**
+     * @brief 床に接するための y 座標の値を取得する
+     * @return 床に接するための y 座標の値
+     */
+    int getFloorY(int x, int y) override;
+
 private:
     /** @brief 矩形の横幅 */
     int m_width;
@@ -64,4 +70,16 @@ private:
 
     /** @brief 右辺のy座標（ holder の位置を基準とする） */
     int right();
+
+    /** @brief 上辺のy座標（指定の位置を基準とする） */
+    int top(int y);
+
+    /** @brief 下辺のy座標（指定の位置を基準とする） */
+    int bottom(int y);
+
+    /** @brief 左辺のx座標（指定の位置を基準とする） */
+    int left(int x);
+
+    /** @brief 右辺のy座標（指定の位置を基準とする） */
+    int right(int x);
 };

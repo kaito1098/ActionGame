@@ -26,33 +26,49 @@ bool RectCollider::isCollide(std::shared_ptr<RectCollider> target) {
 bool RectCollider::checkPassableOver(int x, int y) {
     std::shared_ptr<Map> mapPtr = gameManagerPtr->getMapPtr();
     //・コライダー領域の 1 ピクセル上が通行可能か？を判定する
-    bool leftCheck = mapPtr->checkPassable(left(), top() - 1);
-    bool rightCheck = mapPtr->checkPassable(right(), top() - 1);
+    bool leftCheck = mapPtr->checkPassable(left(x), top(y) - 1);
+    bool rightCheck = mapPtr->checkPassable(right(x), top(y) - 1);
     return leftCheck && rightCheck;
 }
 
 bool RectCollider::checkPassableUnder(int x, int y) {
     std::shared_ptr<Map> mapPtr = gameManagerPtr->getMapPtr();
     //・コライダー領域の 1 ピクセル下が通行可能か？を判定する
-    bool leftCheck = mapPtr->checkPassable(left(), bottom() + 1);
-    bool rightCheck = mapPtr->checkPassable(right(), bottom() + 1);
+    bool leftCheck = mapPtr->checkPassable(left(x), bottom(y) + 1);
+    bool rightCheck = mapPtr->checkPassable(right(x), bottom(y) + 1);
     return leftCheck && rightCheck;
 }
 
 bool RectCollider::checkPassableLeft(int x, int y) {
     std::shared_ptr<Map> mapPtr = gameManagerPtr->getMapPtr();
     //・コライダー領域の 1 ピクセル右が通行可能か？を判定する
-    bool topCheck = mapPtr->checkPassable(left() - 1, top());
-    bool bottomCheck = mapPtr->checkPassable(left() - 1, bottom());
+    bool topCheck = mapPtr->checkPassable(left(x) - 1, top(y));
+    bool bottomCheck = mapPtr->checkPassable(left(x) - 1, bottom(y));
     return topCheck && bottomCheck;
 }
 
 bool RectCollider::checkPassableRight(int x, int y) {
     std::shared_ptr<Map> mapPtr = gameManagerPtr->getMapPtr();
     //・コライダー領域の 1 ピクセル右が通行可能か？を判定する
-    bool topCheck = mapPtr->checkPassable(right() + 1, top());
-    bool bottomCheck = mapPtr->checkPassable(right() + 1, bottom());
+    bool topCheck = mapPtr->checkPassable(right(x) + 1, top(y));
+    bool bottomCheck = mapPtr->checkPassable(right(x) + 1, bottom(y));
     return topCheck && bottomCheck;
+}
+
+int RectCollider::getFloorY(int x, int y) {
+    std::shared_ptr<Map> mapPtr = gameManagerPtr->getMapPtr();
+    //・コライダーの下端が通行可能領域となるまで上昇させる
+    int amount = 0;
+    while (amount < bottom(y)) {
+        bool leftCheck = mapPtr->checkPassable(left(x), bottom(y) - amount);
+        bool rightCheck = mapPtr->checkPassable(right(x), bottom(y) - amount);
+        if (leftCheck && rightCheck) {
+            return y - amount;
+        } else {
+            amount++;
+        }
+    }
+    return 0;   //・通行可能領域が見つからない
 }
 
 int RectCollider::top() {
@@ -69,4 +85,20 @@ int RectCollider::left() {
 
 int RectCollider::right() {
     return left() + m_width;
+}
+
+int RectCollider::top(int y) {
+    return y + m_dy;
+}
+
+int RectCollider::bottom(int y) {
+    return top(y) + m_height;
+}
+
+int RectCollider::left(int x) {
+    return x + m_dx;
+}
+
+int RectCollider::right(int x) {
+    return left(x) + m_width;
 }

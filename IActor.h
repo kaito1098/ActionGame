@@ -72,6 +72,9 @@ protected:
     /** @brief 左右反転描画フラグ（true：右向き、false：左向き） */
     bool m_turn;
 
+    /** @brief 落下中フラグ（true：落下中である、false：落下中でない） */
+    bool m_falling;
+
     /** @brief アニメーションマネージャへのポインタ */
     std::unique_ptr<AnimationManager> m_animationManagerPtr;
 

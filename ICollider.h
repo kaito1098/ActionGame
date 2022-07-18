@@ -57,6 +57,12 @@ public:
      * @return true：衝突している、false：衝突していない
      */
     virtual bool checkPassableRight(int x, int y) = 0;
+
+    /**
+     * @brief 【仮想関数】床に接するための y 座標の値を取得する
+     * @return 床に接するための y 座標の値
+     */
+    virtual int getFloorY(int x, int y) = 0;
     
     /** @brief 当たり判定を保持するオブジェクトを指すポインタ */
     IColliderHolder* m_holderPtr;

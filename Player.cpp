@@ -10,7 +10,7 @@ const int JUMP_FORCE = 28;	//・ジャンプ力
 Player::Player(int _x, int _y) :
     IActor(_x, _y, BASE_SPEED, SPRITES_X_SIZE, SPRITES_Y_SIZE) {
     //・当たり判定
-    collider = std::make_unique<RectCollider>(this, ColliderID::Player, 160, 60, 100, 140);
+    collider = std::make_unique<RectCollider>(this, ColliderID::Player, 160, 80, 100, 120);
     //・使用するアニメーション一式の準備（一番目に指定したアニメーションが待機アニメーションとなる）
     m_animationManagerPtr = std::make_unique<AnimationManager>();
     m_animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Hero/Idle.png", 11, 11, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 6, true));		//・０

@@ -23,23 +23,7 @@ EnemyMushroom::EnemyMushroom(int _x, int _y) :
 }
 
 void EnemyMushroom::setup() {
-    if (collider->checkPassableUnder(m_x, m_y)) {
-        //E—Ž‰º
-        if (!m_falling) {
-            m_falling = true;
-            m_xSpeed = 0;
-            m_animationManagerPtr->change(0);
-        }
-        if (m_ySpeed < MAX_FALL_SPEED) m_ySpeed += GRAVITY;
-    } else {
-        if (m_falling) {
-            //E’…’n
-            m_falling = false;
-            m_y = collider->getFloorY(m_x, m_y);
-            m_xSpeed = 0;
-            m_ySpeed = 0;
-        }
-    }
+    fall(0);
     frameCnt++;
     switch (step) {
     case 0:

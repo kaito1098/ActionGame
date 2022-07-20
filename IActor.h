@@ -90,6 +90,12 @@ protected:
     void setPositionByArray(std::array<int, 2> pos);
 
     /**
+     * @brief 落下判定処理（setupから呼び出される想定）
+     * @param (animId) 落下中のアニメーションID
+     */
+    void fall(int animId);
+
+    /**
      * @brief 【仮想関数】update()が呼ばれる前のセットアップ（キー入力やAI操作による移動速度の決定など）
      */
     virtual void setup() = 0;

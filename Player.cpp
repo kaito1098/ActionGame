@@ -27,23 +27,7 @@ std::array<int, 2> Player::getCenterPosition() {
 }
 
 void Player::setup() {
-    if (collider->checkPassableUnder(m_x, m_y)) {
-        //・落下
-        if (!m_falling) {
-            m_falling = true;
-            m_xSpeed = 0;
-            m_animationManagerPtr->change(2);
-        }
-        if (m_ySpeed < MAX_FALL_SPEED) m_ySpeed += GRAVITY;
-    } else {
-        if (m_falling) {
-            //・着地
-            m_falling = false;
-            m_y = collider->getFloorY(m_x, m_y);
-            m_xSpeed = 0;
-            m_ySpeed = 0;
-        }
-    }
+    fall(2);
     //・アイドル状態
     if (!KeyInput::RIGHT->onPressed() && !KeyInput::LEFT->onPressed()) {
         if (!m_falling) {

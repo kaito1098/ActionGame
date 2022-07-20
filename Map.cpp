@@ -19,8 +19,8 @@ void Map::draw(int screenX, int screenY) {
 }
 
 bool Map::checkPassable(int x, int y) {
-    int numX = floor(static_cast<double>(x) / m_tileSizeX);
-    int numY = floor(static_cast<double>(y) / m_tileSizeY);
+    int numX = static_cast<int>(floor(static_cast<double>(x) / m_tileSizeX));
+    int numY = static_cast<int>(floor(static_cast<double>(y) / m_tileSizeY));
     if (numX >= 0 && numX < m_mapSizeX && numY >= 0 && numY < m_mapSizeY) {
         return m_passData[numX + numY * m_mapSizeX] == MapCollideID::passable;
     }

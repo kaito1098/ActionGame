@@ -32,8 +32,10 @@ public:
 
     /**
      * @brief 現在の状態に基づいた描画処理
+     * @param (screenX) スクリーン座標（x軸方向）
+     * @param (screenY) スクリーン座標（y軸方向）
      */
-    void draw();
+    void draw(int screenX, int screenY);
 
     /**
      * @brief 描画座標（x軸）のゲッター

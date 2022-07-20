@@ -35,6 +35,12 @@ private:
 	 */
 	void draw();
 
+	/** @brief スクリーン座標（x軸方向） */
+	int screenX;
+
+	/** @brief スクリーン座標（y軸方向） */
+	int screenY;
+
 	/** @brief 現在のマップを指すポインタ */
 	std::shared_ptr<Map> mapPtr;
 

@@ -6,13 +6,13 @@ RectCollider::RectCollider(IColliderHolder* holderPtr, ColliderID id, int dx, in
     m_width(width), m_height(height) {
 }
 
-void RectCollider::draw() {
+void RectCollider::draw(int screenX, int screenY) {
     if (!DEBUG_FLAG) return;
     const int color = GetColor(255, 0, 0);
-    DrawLine(left(), top(), right(), top(), color);         //・上辺
-    DrawLine(right(), top(), right(), bottom(), color);     //・右辺
-    DrawLine(left(), bottom(), right(), bottom(), color);   //・下辺
-    DrawLine(left(), top(), left(), bottom(), color);       //・左辺
+    DrawLine(left() - screenX, top() - screenY, right() - screenX, top() - screenY, color);         //・上辺
+    DrawLine(right() - screenX, top() - screenY, right() - screenX, bottom() - screenY, color);     //・右辺
+    DrawLine(left() - screenX, bottom() - screenY, right() - screenX, bottom() - screenY, color);   //・下辺
+    DrawLine(left() - screenX, top() - screenY, left() - screenX, bottom() - screenY, color);       //・左辺
 }
 
 bool RectCollider::isCollide(std::shared_ptr<RectCollider> target) {

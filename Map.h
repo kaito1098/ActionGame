@@ -19,8 +19,10 @@ public:
 
     /**
      * @brief マップの描画処理
+     * @param (screenX) スクリーン座標（x軸方向）
+     * @param (screenY) スクリーン座標（y軸方向）
      */
-    void draw();
+    void draw(int screenX, int screenY);
 
     /**
      * @brief 指定座標の MapCollideID を取得する
@@ -29,6 +31,18 @@ public:
      * @return マップ当たり判定種別
      */
     bool checkPassable(int x, int y);
+
+    /**
+     * @brief マップ全体の横幅を取得する
+     * @return マップ全体の横幅
+     */
+    int getMapWidth();
+
+    /**
+     * @brief マップ全体の縦幅を取得する
+     * @return マップ全体の縦幅
+     */
+    int getMapHeight();
 
 private:
     /** @brief datファイルパス */

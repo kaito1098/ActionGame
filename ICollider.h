@@ -24,8 +24,10 @@ public:
 
     /**
      * @brief 【仮想関数】当たり判定の描画（デバッグ用）
+     * @param (screenX) スクリーン座標（x軸方向）
+     * @param (screenY) スクリーン座標（y軸方向）
      */
-    virtual void draw() = 0;
+    virtual void draw(int screenX, int screenY) = 0;
 
     /**
      * @brief 【仮想関数】矩形コライダーとの当たり判定

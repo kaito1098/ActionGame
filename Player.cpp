@@ -20,6 +20,12 @@ Player::Player(int _x, int _y) :
     m_animationManagerPtr->add(std::make_shared<Animation>("Data/Actor/Hero/Dash.png", 4, 4, 1, SPRITES_X_SIZE, SPRITES_Y_SIZE, 4, false, 2));		//ÅEÇS
 }
 
+std::array<int, 2> Player::getCenterPosition() {
+    int x = m_x + SPRITES_X_SIZE / 2;
+    int y = m_y + SPRITES_Y_SIZE / 2;
+    return std::array<int, 2>{x, y};
+}
+
 void Player::setup() {
     if (collider->checkPassableUnder(m_x, m_y)) {
         //ÅEóéâ∫

@@ -12,8 +12,10 @@ public:
 
     /**
      * @brief 当たり判定の描画（デバッグ用）
+     * @param (screenX) スクリーン座標（x軸方向）
+     * @param (screenY) スクリーン座標（y軸方向）
      */
-    void draw() override;
+    void draw(int screenX, int screenY) override;
 
     /**
      * @brief 矩形コライダーとの当たり判定

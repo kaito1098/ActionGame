@@ -10,21 +10,29 @@ Map::Map(std::string datFilePath) :
     LoadDivGraph(m_tilesetFilePath.c_str(), m_tileNumX * m_tileNumY, m_tileNumX, m_tileNumY, m_tileSizeX, m_tileSizeY, m_tilesetHandle.data());
 }
 
-void Map::draw() {
+void Map::draw(int screenX, int screenY) {
     for (int i = 0; i < m_mapSizeY; i++) {
         for (int j = 0; j < m_mapSizeX; j++) {
-            DrawGraph(m_tileSizeX * j, m_tileSizeY * i, m_tilesetHandle[m_mapData[j + i * m_mapSizeX]], TRUE);
+            DrawGraph(m_tileSizeX * j - screenX, m_tileSizeY * i - screenY, m_tilesetHandle[m_mapData[j + i * m_mapSizeX]], TRUE);
         }
     }
 }
 
 bool Map::checkPassable(int x, int y) {
-    int numX = x / m_tileSizeX;
-    int numY = y / m_tileSizeY;
-    if (numX < m_mapSizeX && numY < m_mapSizeY) {
+    int numX = floor(static_cast<double>(x) / m_tileSizeX);
+    int numY = floor(static_cast<double>(y) / m_tileSizeY);
+    if (numX >= 0 && numX < m_mapSizeX && numY >= 0 && numY < m_mapSizeY) {
         return m_passData[numX + numY * m_mapSizeX] == MapCollideID::passable;
     }
     return false;   //・マップ範囲外は通行不可
+}
+
+int Map::getMapWidth() {
+    return m_tileSizeX * m_mapSizeX;
+}
+
+int Map::getMapHeight() {
+    return m_tileSizeY * m_mapSizeY;
 }
 
 void Map::loadMapData() {

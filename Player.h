@@ -1,5 +1,6 @@
 #pragma once
 #include "IActor.h"
+#include <array>
 
 /** @brief プレイヤーキャラクター */
 class Player : public IActor {
@@ -11,6 +12,12 @@ public:
 	 * @remark アニメーションの登録はここで行っている。
 	 */
 	Player(int x, int y);
+
+	/**
+	 * @brief プレイヤーの中心座標を取得する
+	 * @return プレイヤーの中心座標（x, y）
+	 */
+	std::array<int, 2> getCenterPosition();
 
 protected:
 	/**

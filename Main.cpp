@@ -5,9 +5,9 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	SetOutApplicationLogValidFlag(FALSE);
 	ChangeWindowMode(TRUE);
 	SetGraphMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32);
+	SetAlwaysRunFlag(TRUE);
 	if (DxLib_Init() == -1) return -1;
 
-	WaitKey();
 	gameManagerPtr->main();
 
 	DxLib_End();

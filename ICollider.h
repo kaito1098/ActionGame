@@ -38,30 +38,40 @@ public:
 
     /**
      * @brief 【仮想関数】天井との当たり判定
+     * @param (x) x座標
+     * @param (y) y座標
      * @return true：衝突している、false：衝突していない
      */
     virtual bool checkPassableOver(int x, int y) = 0;
 
     /**
      * @brief 【仮想関数】床との当たり判定
+     * @param (x) x座標
+     * @param (y) y座標
      * @return true：落下している、false：落下していない
      */
     virtual bool checkPassableUnder(int x, int y) = 0;
 
     /**
      * @brief 【仮想関数】壁との当たり判定（左方向）
+     * @param (x) x座標
+     * @param (y) y座標
      * @return true：衝突している、false：衝突していない
      */
     virtual bool checkPassableLeft(int x, int y) = 0;
 
     /**
      * @brief 【仮想関数】壁との当たり判定（右方向）
+     * @param (x) x座標
+     * @param (y) y座標
      * @return true：衝突している、false：衝突していない
      */
     virtual bool checkPassableRight(int x, int y) = 0;
 
     /**
      * @brief 【仮想関数】床に接するための y 座標の値を取得する
+     * @param (y) y座標
+     * @param (x) x座標
      * @return 床に接するための y 座標の値
      */
     virtual int getFloorY(int x, int y) = 0;

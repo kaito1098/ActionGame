@@ -25,9 +25,8 @@ enum class MapCollideID {
     passable = 0,       //・通行可能
     impassable = 1,     //・通行不可能
     jumpPassable = 2,   //・ジャンプで下から通行可能
-    squatPassable = 3,  //・しゃがみＺで上から通行可能
-    rightStair = 4,     //・右上がり階段
-    leftStair = 5,      //・左上がり階段
+    rightStair = 3,     //・右上がり階段
+    leftStair = 4,      //・左上がり階段
 };
 
 /** @brief 当たり判定種別（列挙帯） */
